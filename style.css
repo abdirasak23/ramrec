@@ -1,0 +1,727 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: white;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Rubik';
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.login{
+    position: absolute;
+    right: 40px;
+    height: 50px;
+    width: 150px;
+    top: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.heads {
+    height: 80px;
+    width: 100%;
+    /* background-color: green; */
+    display: flex;
+}
+
+.heads ul {
+    display: flex;
+    position: relative;
+    left: 300px;
+    gap: 50px;
+    font-weight: 500;
+}
+
+.heads ul li:hover{
+
+    color: #c4a700;
+    list-style-type: disc;
+}
+
+.heads li::marker {
+    color: #c4a700;
+}
+
+
+
+.heads ul li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.heads ul a {
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+    top: 30px;
+    color: black;
+}
+
+.heads .logo {
+    position: relative;
+    left: 30px;
+    top: 20px;
+
+}
+
+
+.start {
+    height: 200px;
+    width: 1200px;
+    background-color: grey;
+    position: relative;
+    left: 30px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.smll {
+    position: absolute;
+    top: 90px;
+    height: 40px;
+    width: 300px;
+    /* background-color: blanchedalmond; */
+    left: 20px;
+    font-size: 28px;
+}
+
+.large h2 {
+
+    font-weight: 400;
+    font-size: 30px;
+    color: #c4a700;
+}
+
+.large span {
+    color: black;
+}
+
+.large {
+    position: absolute;
+    top: 135px;
+    height: 40px;
+    width: 300px;
+    /* background-color: rgb(144, 123, 92); */
+    left: 20px;
+    font-size: 24px;
+
+}
+
+
+.cat {
+    cursor: pointer;
+}
+
+.smll h2 {
+    font-weight: 400;
+}
+
+.categories {
+    height: 100px;
+    width: 1200px;
+    /* background-color: grey; */
+    position: relative;
+    top: 20px;
+    left: 30px;
+    display: flex;
+    overflow: hidden;
+    gap: 40px;
+}
+
+.cat {
+    height: 100px;
+    width: 180px;
+    /* background-color: red; */
+    overflow: hidden;
+    position: relative;
+    left: 120px;
+}
+
+.logo h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    font-size: 34px;
+    color: black;
+}
+
+.logo span {
+    color: #FFBF00;
+}
+
+
+.products {
+    height: 50px;
+    width: 150px;
+    background-color: black;
+    position: relative;
+    left: 10px;
+    top: 25px;
+    border-radius: 30px;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.products h2 {
+    font-size: 18px;
+    font-weight: 400;
+    position: relative;
+    top: 14px;
+}
+
+.products i {
+    position: relative;
+    top: 12px;
+    font-size: 24px;
+    color: #c4a700;
+}
+
+
+
+
+.recipe_home {
+    /* height: 450px; */
+    width: 100%;
+    /* background-color: grey; */
+    position: relative;
+    top: 40px;
+    /* margin-bottom: 540px; */
+
+}
+
+.cards {
+    /* height: 450px; */
+    width: 300px;
+    /* background-color: rgb(161, 164, 143); */
+    position: relative;
+    left: 0px;
+    border-radius: 20px;
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 40px;
+}
+
+.recipe_cards {
+    background-color: #f1ede2c9;
+    height: 430px;
+    width: 280px;
+    position: relative;
+    left: 10px;
+    top: 10px;
+    border-radius: 20px;
+}
+
+.head {
+    height: 80px;
+    width: 280px;
+    /* background-color: rgba(147, 147, 147, 0.658); */
+    position: relative;
+    top: 20px;
+}
+
+
+/* .head h2{
+    font-size: 20px;
+} */
+
+.image {
+    height: 250px;
+    width: 260px;
+    /* background-color: blue; */
+    border-radius: 20px;
+    position: relative;
+    left: 10px;
+    top: 20px;
+    overflow: hidden;
+}
+
+.start{
+    position: relative;
+    top: 20px;
+}
+
+
+.see {
+    height: 40px;
+    background-color: black;
+    width: 260px;
+    border-radius: 20px;
+    top: 35px;
+    position: relative;
+    left: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+
+.head h2 {
+    font-size: 24px;
+    left: 10px;
+    position: relative;
+    font-weight: 600;
+}
+
+.image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.see h2 {
+    font-size: 16px;
+    font-weight: 400;
+    position: relative;
+    top: 10px;
+}
+
+.see .cheff {
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border-radius: 100%;
+    top: 8px;
+    position: relative;
+    color: black;
+    text-align: center;
+}
+
+
+.cheff i {
+    top: 5px;
+    position: relative;
+}
+
+
+.start img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+
+.cheffs {
+    height: 400px;
+    width: 100%;
+    /* background-color: grey; */
+    position: relative;
+    top: 90px;
+    display: flex;
+
+    /* bottom: 250px; */
+}
+
+
+
+.left {
+    height: 400px;
+    width: 650px;
+    /* background-color: red; */
+}
+
+.texts {
+    height: 80px;
+    width: 600px;
+    /* background-color: #c4a700; */
+    position: relative;
+    top: 40px;
+    left: 40px;
+}
+
+.texts h2 {
+    font-size: 34px;
+    font-weight: 450;
+}
+
+.small_texts {
+    /* background-color: blue; */
+    height: 100px;
+    width: 600px;
+    position: relative;
+    left: 40px;
+    top: 50px;
+}
+
+.small_texts h2 {
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.learn_more {
+    height: 50px;
+    width: 200px;
+    position: relative;
+    left: 40px;
+    top: 100px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.right {
+    height: 400px;
+    width: 500px;
+    /* background-color: black; */
+    position: relative;
+    left: 40px;
+    border-radius: 20px;
+    /* overflow: hidden; */
+}
+
+.cor {
+    height: 50px;
+    width: 60px;
+    background-color: transparent;
+    border-radius: 5px;
+    position: absolute;
+    left: 95px;
+    top: 40px;
+    /* overflow-x: auto; */
+}
+
+.cor2 {
+    height: 50px;
+    width: 60px;
+    background-color: transparent;
+    border-radius: 5px;
+    position: absolute;
+    right: -20px;
+    top: 60px;
+}
+
+.cor img {
+    height: 80%;
+    width: 80%;
+}
+
+.cor1 {
+    height: 50px;
+    width: 60px;
+    background-color: transparent;
+    border-radius: 5px;
+    position: absolute;
+    left: -25px;
+    top: 240px;
+    z-index: 2;
+}
+
+
+.right img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.cor .cor1 .cor2 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.delicios {
+    height: 300px;
+    width: 1160px;
+    background-color: blueviolet;
+    position: relative;
+    top: 130px;
+    left: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.delicios img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.delis{
+    height: 40px;
+    width: 500px;
+    /* background-color: white; */
+    position: absolute;
+    top: 20px;
+    left: 420px;
+}
+
+.delis h2{
+    font-size: 34px;
+    font-weight: 700;
+    /* color: grey; */
+}
+
+.emails{
+    height: 100px;
+    width: 550px;
+    /* background-color: #c4a700; */
+    position: absolute;
+    top: 70px;
+    left: 380px;
+    text-align: center;
+}
+
+.emails h2{
+    font-weight: 400;
+    font-size: 18px;
+    
+}
+
+.email{
+    height: 60px;
+    width: 450px;
+    background-color: white;
+    position: absolute;
+    top: 160px;
+    left: 420px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+.email input{
+    height: 50px;
+    width: 320px;
+    position: relative;
+    top: 2px;
+    left: 10px;
+    font-size: 18px;
+    border: none;
+}
+
+.email input:focus{
+    border: none;
+    outline: none;
+}
+
+.subscribe{
+    width: 160px;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.footer{
+    height: 100px;
+    width: 100%;
+    /* background-color: grey; */
+    position: relative;
+    top: 150px;
+    display: flex;
+}
+
+.loga{
+    position: relative;
+    left: 40px;
+    top: 10px;
+    height: 40px;
+    width: 200px;
+    /* background-color: blue; */
+}
+
+.loga a{
+    text-decoration: none;
+}
+
+.desc{
+    position: relative;
+    left: 40px;
+    top: 20px;
+    height: 40px;
+    width: 400px;
+    /* background-color: rgb(6, 6, 62); */
+}
+
+.desc h2{
+    font-size: 18px;
+    font-weight: 400;
+
+}
+
+.links{
+    position: absolute;
+    right: 70px;
+    
+}
+
+.links ul{
+    display: flex;
+    gap: 20px;
+    position: relative;
+    top: 20px;
+    
+}
+
+.links li {
+    list-style: none;
+    color: black;
+}
+.links ul li:hover{
+
+    color: #c4a700;
+    list-style-type: disc;
+}
+
+.soc a:hover{
+    color: #c4a700;
+}
+
+.links a{
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.links{
+    /* background-color: blue; */
+    height: 100px;
+    display: block;
+}
+
+.soc {
+
+    height: 30px;
+    width: 200px;
+    /* background-color: white; */
+    position: relative;
+    top: 30px;
+    
+}
+
+.soc i{
+    font-size: 24px;
+}
+
+.soc {
+    display: flex;
+    gap: 30px;
+    position: relative;
+    left: 80px;
+}
+
+.soc a{
+    color: #000;
+}
+
+.last{
+    height: 30px;
+    width: 100%;
+    /* background-color: grey; */
+    position: relative;
+    top: 150px;
+    justify-content: center;
+    text-align: center;
+}
+
+.last h5{
+    font-size: 20px;
+    font-weight:400;
+}
+
+.last span{
+    color: #c4a700;
+    font-weight: 500;
+}
+
+a{
+    text-decoration: none;
+}
+
+.profile{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(125, 44, 44);
+    border-radius: 100%;
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    overflow: hidden;
+    color: grey;
+    border: 1px solid grey;
+}
+
+.profile img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.dot-container{
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+}
+
+.alert{
+    height: 50px;
+    width: 400px;
+    background-color: red;
+    position: fixed;
+    left: 400px;
+    top: 20px;
+    border-radius: 10px;
+    text-align: start;
+    /* display: none; */
+    z-index: 999;
+    display: flex;
+    overflow: hidden;
+}
+
+
+.alert{
+    display: none;
+}
+
+.alert p{
+    position: relative;
+    /* bottom: px; */
+    left: 20px;
+    color: white;
+    top: 15px;
+}
+
+.alert button{
+    height: 20px;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.342);
+    position: relative;
+    top: 5px;
+    left: 370px;
+    color: black;
+    display: none;
+}
+
+.alert i{
+    position: absolute;
+    bottom: 18px;
+    color: white;
+    font-size: 20px;
+    z-index: 999;
+    right: 20px;
+}

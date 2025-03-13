@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="icon" href="images/icon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <title>Admin Panel</title>
+</head>
+
+<body>
+  <div class="sidebar">
+    <a href="">
+      <div class="logo">
+        <h4>RAM<span>REC</span></h4>
+      </div>
+    </a>
+    <a href="#">
+      <div class="dash" id="dashboard">
+        <i class='bx bxs-dashboard'></i>
+        <h3>Dashboard</h3>
+      </div>
+    </a>
+    <a href="#">
+      <div class="dash" id="recipeLink">
+        <i class='bx bxs-bowl-rice'></i>
+        <h3>Recipe</h3>
+      </div>
+    </a>
+    <a href="#">
+      <div class="dash" id="recipeLinker">
+        <h3>Recipe</h3>
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+      </div>
+    </a>
+  </div>
+  <div class="home">
+    <div class="statistics">
+      <div class="recipe-count">
+        <div class="icon">
+          <i class='bx bxs-bowl-rice'></i>
+        </div>
+        <div class="count">
+          <h2>233</h2>
+        </div>
+        <div class="productName">
+          <h2>Recipes</h2>
+        </div>
+      </div>
+      <div class="recipe-count">
+        <div class="icon">
+          <i class="fa-solid fa-users"></i>
+        </div>
+        <div class="count">
+          <h2>20</h2>
+        </div>
+        <div class="productName">
+          <h2>Users</h2>
+        </div>
+      </div>
+      <div class="recipe-count">
+        <div class="icon">
+          <i class="fa-solid fa-layer-group"></i>
+        </div>
+        <div class="count">
+          <h2>5</h2>
+        </div>
+        <div class="productName">
+          <h2>Categories</h2>
+        </div>
+      </div>
+      <div class="recipe-count">
+        <div class="icon">
+          <i class="fa-solid fa-utensils"></i>
+        </div>
+        <div class="count">
+          <h2>30</h2>
+        </div>
+        <div class="productName">
+          <h2>User Recipes</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="recipe">
+    <div class="main">
+      <div class="list">
+        <h2>List New Item</h2>
+      </div>
+      <div class="alert">
+        <p></p>
+        <i class="fa-solid fa-circle-info"></i>
+      </div>
+      <div class="foodinfo">
+        <div class="details">
+          <h5>Food name</h5>
+          <div class="name"><input type="text" placeholder="eg. Avacado macaan"></div>
+        </div>
+        <div class="details">
+          <h5>Food Description</h5>
+          <div class="name" id="name"><input type="text" placeholder="eg. Easy to cook can serve 4 adult..."></div>
+        </div>
+      </div>
+      <h4>Food Details</h4>
+      <div class="foodinfo" id="details">
+        <div class="details">
+          <h5>Cooking Time</h5>
+          <div class="name"><input type="text" placeholder="eg. 15 minutes"></div>
+        </div>
+        <div class="details">
+          <h5>Preparation Time</h5>
+          <div class="name"><input type="text" placeholder="eg. 10 minutes"></div>
+        </div>
+        <div class="details">
+          <h5>Difficulties</h5>
+          <div class="name">
+            <select name="difficulties" id="">
+              <option value="easy">Easy</option>
+              <option value="moderate">Moderate</option>
+              <option value="difficult">Difficult</option>
+            </select>
+          </div>
+        </div>
+        <div class="details" id="categories">
+          <h5>Category</h5>
+          <div class="name">
+            <select>
+              <option value="">Select Category</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="dinner">Dinner</option>
+              <option value="sahur">Sahur</option>
+              <option value="iftar">Iftar</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <h4>Images</h4>
+      <div class="images">
+        <div class="food_details">
+          <div class="details">
+            <h5>Food image</h5>
+            <a href="#">
+              <div class="foodimage">
+                <i class='bx bx-plus'></i>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="food_details">
+          <div class="details">
+            <h5>Ad image</h5>
+            <a href="#">
+              <div class="foodimage">
+                <i class='bx bx-plus'></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <h4>Nutritions</h4>
+
+      <div class="nutritions">
+        <div class="nutrition">
+          <div class="nutri">
+            <h3>Protein</h3>
+            <div class="nutritions_details"><input type="text" placeholder="eg. 15"></div>
+          </div>
+          <div class="nutri">
+            <h3>vitamin</h3>
+            <div class="nutritions_details"><input type="text" placeholder="eg. 15"></div>
+          </div>
+          <div class="nutri">
+            <h3>Colories</h3>
+            <div class="nutritions_details"><input type="text" placeholder="eg. 15"></div>
+          </div>
+          <div class="nutri">
+            <h3>Carbonhaydrates</h3>
+            <div class="nutritions_details"><input type="text" placeholder="eg. 15"></div>
+          </div>
+        </div>
+
+        <div class="nutrition">
+          <div class="nutri" id="nutri-tion">
+            <h3>Ingredients. <span>(Note: write Ingredients spacing coma "," )</span> <span class="delete"><a
+                  href="#"><i class="fa-solid fa-trash"></i></a></span></h3>
+            <div class="nutritions_details" id="nutri"><input type="text" placeholder="1 tomato"></div>
+          </div>
+          <div class="comas" id="tags-container">
+
+
+          </div>
+        </div>
+
+      </div>
+      <button>Summit</button>
+    </div>
+
+
+  </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/supabase.min.js"></script>
+  <script src="adding_recipe.js" type="module"></script>
+  <script src="admin.js"></script>
+  <!-- <script src="adding_recipe.js"></script> -->
+
+</body>
+
+</html>

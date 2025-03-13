@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href=
+"/images/icon.png"
+        type="image/x-icon" />
+        <link rel="stylesheet" href="recipe.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <title>Recipes</title>
+</head>
+<body>
+
+    
+    <div class="cats">
+        <div class="cat">
+            <div class="category">
+                <i class="fa-solid fa-list"></i>
+                <select name="Category" id="">
+                    <option value="Category">Categories</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="breakfast">Breakfast</option>
+                    <option value="sahur">launch</option>
+                    <option value="iftar">Iftar</option>
+                </select>
+            </div>
+
+
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <div class="line"></div>
+                <input type="text" placeholder="Search here">
+                <i class="fa-solid fa-circle-xmark" id="cancel"></i>
+            </div>
+
+            <div class="filter">
+                <i class='bx bx-filter-alt'></i>
+                <select name="filter" id="">
+                    <option value="Category">Filter</option>
+                    <option value="less-time">Less Time</option>
+                    <option value="more-time">More Time</option>
+                    <option value="easy">Easy</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="difficult">difficult</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- //fetch these data
+    1. difficulties
+    2. food Name
+    3. cooking time and calculation of addition of all nutiritions -->
+    <div class="cards">
+        <div class="food-card">
+            <div class="images">
+                <img src="/images/macr.jpg" alt="">
+            </div>
+            <div class="content">
+                <div class="head">
+                    <h2>Very Easy</h2>
+                </div>
+                <div class="name">
+                    <h2>Fish and potato Cooked Del</h2>
+                </div>
+                <div class="nuts-time">
+                    <p>20 min / 189 nutritions</p>
+                </div>
+                <button id="view-btn">View Recipe</button>
+            </div>
+           
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="/pages/recipes.js"></script>
+    
+</body>
+</html>

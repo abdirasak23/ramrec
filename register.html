@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="register.css">
+    <link rel="icon" href=
+"images/icon.png"
+        type="image/x-icon" />
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Register</title>
+</head>
+<body>
+
+    <div class="containers">
+        <div class="alert">
+            <p></p>
+            <button><i class='bx bx-x'></i></button>
+        </div>
+        <div class="left">
+            <video src="vedio/recipe.mp4" autoplay muted loop></video>
+        </div>
+        <div class="right">
+            <div class="logincontainer">
+                <div class="start"><h2>Create Account</h2></div>
+                <div class="email">
+                    <i class='bx bx-envelope'></i>
+                    <input id="email" type="text" placeholder="email">
+                </div>
+                <div class="password">
+                    <a href="javascript:void(0);" id="toggle-password">
+                        <i class="fa-solid fa-eye"></i>
+                    </a>
+                    <i class='bx bx-key' ></i>
+                    <input id="password" type="password" placeholder="password">
+                    
+                </div>
+
+                <button id="register-btn">Register</button>
+            </div>
+
+            <div class="terms">
+                <p>By Clicking 'Login' I agree to the RAMREC <a href="#">Terms of Service</a>, <a href="#"> Privacy Policy</a></p>
+            </div>
+
+            <div class="or">
+                <h2>Or i am <a href="adminlogin.html">admin</a> ?</h2>
+                <h2 class="reg">Have an account? <a href="login.html">Login</a></h2>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="register.js"></script>
+</body>
+</html>

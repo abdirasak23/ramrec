@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Rubik';
+    overflow: hidden;
+}
+
+.containers{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.left, .right{
+    flex: 1;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.left{
+    background-color: black;
+    overflow: hidden;
+}
+
+.right{
+    background-color: #FFFFF0;
+}
+
+.logincontainer{
+    background-color: #FFFFF0;
+    height: 500px;
+    width: 500px;
+    position: relative;
+    left: 65px;
+    top: 80px;
+    border-radius: 20px;
+    display: block;
+}
+
+.start
+{
+
+    /* background-color: rgba(0, 0, 0, 0.324); */
+    height: 50px;
+    width: 200px;
+    position: relative;
+    left: 150px;
+    top: 20px;
+    text-align: center;
+}
+
+.start h2{
+    position: relative;
+    top: 10px;
+    font-size: 28px;
+    color: blue;
+}
+
+.email{
+    height: 50px;
+    width: 400px;
+    background-color: transparent;
+    position: relative;
+    top: 40px;
+    left: 30px;
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+    border: 2px solid rgb(127, 127, 231);
+}
+
+#email{
+    height: 40px;
+    width: 350px;
+    position: relative;
+    left: 30px;
+    top: 5px;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+
+}
+
+#email:focus{
+    border: none;
+    outline: none;
+}
+
+.email i{
+    font-size: 24px;
+    position: relative;
+    left: 20px;
+    top: 12px;
+    color: #534d4d;
+}
+
+.password{
+    height: 50px;
+    width: 400px;
+    background-color: transparent;
+    position: relative;
+    top: 65px;
+    left: 30px;
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+    border: 2px solid rgb(127, 127, 231);
+}
+
+.password a i{
+    position: absolute;
+    left:  365px;
+    font-size: 20px;
+    top: 15px;
+}
+
+#password{
+    height: 40px;
+    width: 300px;
+    position: relative;
+    left: 30px;
+    top: 5px;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+
+}
+
+#password:focus{
+    border: none;
+    outline: none;
+}
+
+.password i{
+    font-size: 24px;
+    position: relative;
+    left: 20px;
+    top: 12px;
+    color: #534d4d;
+}
+
+button{
+    height: 50px;
+    width: 405px;
+    position: relative;
+    top: 100px;
+    left: 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(75, 75, 234);
+    color: white;
+    cursor: pointer;
+}
+
+h5{
+    position: relative;
+    top: 75px;
+    font-size: 16px;
+    left: 280px;
+    font-weight:400;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.left video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+.or{
+    height: 40px;
+    width: 580px;
+    /* background-color: red; */
+    position: relative;
+    left: 10px;
+    top: 50px;
+    display: flex;
+    
+}
+
+
+.terms
+{
+    /* background-color: grey; */
+    height: 40px;
+    width: 400px;
+    position: relative;
+    bottom: 70px;
+    left: 95px;
+    text-align: center;
+    font-size: 11px;
+
+}
+
+.terms a{
+    color: blue;
+    text-decoration: underline;
+}
+
+
+.or .reg{
+    position: relative;
+    left: 200px;
+}
+
+.or h2{
+    font-weight: 400;
+    position: relative;
+    left: 80px;
+    font-size: 18px;
+    word-spacing: 5px;
+}
+
+.or a{
+    text-decoration: underline;
+    color: blue;
+}
+
+.alert{
+    height: 50px;
+    width: 400px;
+    background-color: red;
+    position: absolute;
+    left: 400px;
+    top: 20px;
+    border-radius: 10px;
+    text-align: start;
+    display: none;
+    
+}
+
+.alert p{
+    position: relative;
+    top: 15px;
+    left: 20px;
+    color: white;
+}
+
+.alert button{
+    height: 20px;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.342);
+    position: relative;
+    top: 5px;
+    left: 370px;
+    color: black;
+    display: none;
+}
+
+.alert i{
+    position: relative;
+    top: 2px;
+    color: white;
+    
+}

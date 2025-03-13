@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #FCF5E5;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Rubik';
+}
+
+.cats{
+    height: 100px;
+    width: 100%;
+    /* background-color: blue; */
+}
+.cards{
+    height: 500px;
+    width: 100%;
+    /* background-color: rgb(1, 1, 35); */
+    display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to next row */
+  gap: 10px; /* Adjust spacing between cards */
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.food-card
+{
+    height: 200px;
+    width: 400px;
+    background-color: white;
+    position: relative;
+    left: 30px;
+    top: 20px;
+    border-radius: 20px;
+    display: flex;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.images{
+    height: 180px;
+    width: 170px;
+    border-radius: 20px;
+    background-color: rgb(63, 164, 63);
+    position: relative;
+    left: 10px;
+    top: 10px;
+    overflow: hidden;
+}
+
+.content
+{
+    height: 200px;
+    width: 200px;
+    /* background-color: grey; */
+    position: relative;
+    left: 20px;
+    display: block;
+}
+
+.head{
+    height: 30px;
+    width: 150px;
+    /* background-color: blue; */
+    position: relative;
+    top: 15px;
+    overflow: hidden;
+}
+
+.head h2{
+    font-weight: 500;
+    font-size: 16px;
+    position: relative;
+    bottom: 6px;
+    color: rgb(86, 141, 3);
+}
+.name{
+    height: 60px;
+    width: 200px;
+    /* background-color: yellow; */
+    position: relative;
+    top: 20px;
+    overflow: hidden;
+}
+
+.name h2{
+    font-weight: 600;
+    font-size: 20px;
+
+    position: relative;
+    bottom: 15px;
+}
+
+
+.nuts-time{
+    height: 30px;
+    width: 200px;
+    /* background-color: blueviolet; */
+    position: relative;
+    top: 20px;
+    overflow: hidden;
+}
+
+.nuts-time p{
+    position: relative;
+    bottom: 10px;
+}
+
+.content button{
+    height: 45px;
+    width: 150px;
+    position: relative;
+    top: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(51, 164, 51);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    /* left: 10px; */
+}
+
+.images img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.cat{
+    height: 60px;
+    width: 1200px;
+    border: 2px solid black;
+    border-radius: 20px;
+    position: relative;
+    top: 20px;
+    left: 40px;
+    display: flex;
+}
+
+.category{
+    height: 50px;
+    width: 200px;
+    /* background-color: rgb(167, 151, 151); */
+    position: relative;
+    left: 10px;
+    top: 5px;
+    gap: 2px;
+}
+
+.category select {
+    height: 40px;
+    width: 150px;
+    position: relative;
+    left: 5px;
+    top: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    background-color: #FCF5E5;
+    width: auto;
+    
+}
+
+select:focus{
+    outline: none;
+}
+
+
+
+.category i{
+    font-size: 25px;
+    position: relative;
+    top:10px;
+}
+
+
+.filter{
+    height: 50px;
+    width: 200px;
+    /* background-color: rgb(167, 151, 151); */
+    border: none;
+    position: relative;
+    left:400px;
+    top: 5px;
+}
+
+.filter select {
+    height: 40px;
+    width: 150px;
+    position: relative;
+    left: 5px;
+    top: 5px;
+    border-radius: 5px;
+    background-color: #FCF5E5;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    width: auto;
+}
+
+select:focus{
+    outline: none;
+    background-color: #FCF5E5;
+}
+
+
+
+.filter i{
+    font-size: 25px;
+    position: relative;
+    top:10px;
+}
+
+.search{
+    height: 40px;
+    width: 400px;
+    /* background-color: blue; */
+    position: relative;
+    left: 200px;
+    position: relative;
+    top: 10px;
+    border-radius: 40px;
+    border: 1px solid black;
+    display: flex;
+}
+
+.search i{
+    font-size: 20px;
+    position: relative;
+    top: 10px;
+    left: 15px;
+    color: rgb(97, 93, 93);
+}
+
+.line{
+    height: 40px;
+    width: 1px;
+    background-color: rgb(56, 53, 53);
+    position: relative;
+    left: 25px;
+}
+
+.search input{
+    position: relative;
+    left: 28px;
+    width: 300px;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+.search input:focus{
+    outline: none;
+}
+
+.search #cancel{
+    font-size: 20px;
+    color: rgb(69, 63, 63);
+    position: relative;
+    left: 35px;
+    display: none;
+    cursor: pointer;
+}
+
+.sorry{
+    position: absolute;
+    left: 45%;
+    top: 20%;
+    z-index: 99;
+    display: none;
+}

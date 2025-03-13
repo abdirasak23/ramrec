@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #FFFFF0;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Rubik';
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.login {
+    position: absolute;
+    right: 40px;
+    height: 50px;
+    width: 150px;
+    top: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.heads {
+    height: 80px;
+    width: 100%;
+    /* background-color: green; */
+    display: flex;
+}
+
+.heads ul {
+    display: flex;
+    position: relative;
+    left: 300px;
+    gap: 50px;
+    font-weight: 500;
+
+}
+
+#logo h1{
+    color: black;
+}
+
+.heads ul li:hover {
+
+    color: #c4a700;
+    list-style-type: disc;
+}
+
+.heads li::marker {
+    color: #c4a700;
+}
+
+
+
+.heads ul li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.heads ul a {
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+    top: 30px;
+    color: white;
+}
+
+.heads .logo {
+    position: relative;
+    left: 30px;
+    top: 20px;
+
+}
+
+.heads a {
+    text-decoration: none;
+}
+
+.about {
+    background: linear-gradient(to right, #270082, #6d1a8b);
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    top: 0px;
+    border-bottom-left-radius: 50% 30px;
+    border-bottom-right-radius: 50% 30px;
+    z-index: -1;
+    justify-content: center;
+    text-align: center;
+}
+
+.logo h1 {
+    color: white;
+}
+
+.logo span {
+    color: #c4a700;
+    text-decoration: none;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.about h2 {
+    position: relative;
+    top: 90px;
+    color: white;
+}
+
+.about p {
+    position: relative;
+    top: 100px;
+    color: white;
+}
+
+.about h2 {
+    position: relative;
+    top: 90px;
+    color: white;
+}
+
+.about .about-start {
+    background-color: red;
+    width: 300px;
+    left: 500px;
+    position: relative;
+    top: 90px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.about-description {
+    /* background-color: blue; */
+    height: 400px;
+    width: 100%;
+    position: relative;
+    top: 150px;
+    display: flex;
+}
+
+.left {
+    height: 400px;
+    width: 700px;
+    /* background-color: grey; */
+}
+
+.head {
+    height: 50px;
+    width: 600px;
+    /* background-color: rgb(69, 40, 40); */
+}
+
+.head h2 {
+    font-weight: 500;
+    position: relative;
+    left: 40px;
+    font-size: 28px;
+}
+
+.info {
+    height: 150px;
+    width: 730px;
+    /* background-color: green; */
+}
+
+.info p {
+    color: rgb(28, 23, 23);
+    left: 40px;
+    position: relative;
+    font-size: 18px;
+}
+
+.line {
+    height: 2px;
+    width: 600px;
+    background-color: black;
+    left: 40px;
+    position: relative;
+    bottom: 10px;
+}
+
+.goals {
+    height: 60px;
+    width: 600px;
+    /* background-color: red; */
+    position: relative;
+    left: 40px;
+    display: flex;
+    gap: 20px;
+}
+
+.mission {
+    height: 50px;
+    width: 150px;
+    /* background-color: yellow; */
+    border-radius: 20px;
+    position: relative;
+    top: 5px;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+
+.mission h3 {
+    font-weight: 500;
+    position: relative;
+    top: 12px;
+}
+
+.goal-description {
+    height: 120px;
+    width: 650px;
+    /* background-color: green; */
+
+}
+
+.goal-description h2 {
+    font-weight: 400;
+    font-size: 20px;
+    position: relative;
+    left: 40px;
+}
+
+.right{
+    height: 400px;
+    width: 550px;
+    /* background-color: black; */
+    justify-content: center;
+}
+
+.pic{
+    height: 400px;
+    width: 400px;
+    background-color: #270082;
+    position: relative;
+    left: 80px;
+    border-radius: 20px;
+
+}
+
+/* .righter{
+    height: 180px;
+    width: 150px;
+    background-color: rgb(72, 13, 13);
+    position: absolute;
+    bottom: -80px;
+    border-radius: 10px;
+    overflow-y:auto;
+
+} */
+
+.spacer{
+    height: 100px;
+    width: 100%;
+    position: relative;
+    top: 200px;
+    /* background-color: rgb(187, 32, 32); */
+}
+
+.pic img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.pic{
+    overflow: hidden;
+}
+
+
+.footer{
+    height: 100px;
+    width: 100%;
+    /* background-color: grey; */
+    position: relative;
+    top: 150px;
+    display: flex;
+}
+
+.loga{
+    position: relative;
+    left: 40px;
+    top: 10px;
+    height: 40px;
+    width: 200px;
+    /* background-color: blue; */
+}
+
+.loga a{
+    text-decoration: none;
+}
+
+.desc{
+    position: relative;
+    left: 40px;
+    top: 20px;
+    height: 40px;
+    width: 400px;
+    /* background-color: rgb(6, 6, 62); */
+}
+
+.desc h2{
+    font-size: 18px;
+    font-weight: 400;
+
+}
+
+.links{
+    position: absolute;
+    right: 70px;
+    
+}
+
+.links ul{
+    display: flex;
+    gap: 20px;
+    position: relative;
+    top: 20px;
+    
+}
+
+.links li {
+    list-style: none;
+    color: black;
+}
+
+.links a{
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.links{
+    /* background-color: blue; */
+    height: 100px;
+    display: block;
+}
+
+.soc {
+
+    height: 30px;
+    width: 200px;
+    /* background-color: white; */
+    position: relative;
+    top: 30px;
+    
+}
+
+.soc i{
+    font-size: 24px;
+}
+
+.soc {
+    display: flex;
+    gap: 30px;
+    position: relative;
+    left: 80px;
+}
+
+.soc a{
+    color: #000;
+}
+
+.last{
+    height: 30px;
+    width: 100%;
+    /* background-color: grey; */
+    position: relative;
+    top: 150px;
+    justify-content: center;
+    text-align: center;
+}
+
+.last h5{
+    font-size: 20px;
+    font-weight:400;
+}
+
+.last span{
+    color: #c4a700;
+    font-weight: 500;
+}
+
+a{
+    text-decoration: none;
+}
