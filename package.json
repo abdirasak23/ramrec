@@ -1,11 +1,11 @@
 {
   "dependencies": {
+    "choco": "^0.2.1",
     "vercel": "^41.4.0"
   },
   "name": "ramrec",
   "version": "1.0.0",
   "main": "adding_recipe.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

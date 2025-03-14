@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const recipeContainer = document.querySelector('.recipe');
 
   // Define default background colors for containers
-  const homeDefaultColor = 'red';
+  const homeDefaultColor = '#fffff0';
   const recipeDefaultColor = '#FFFFF0';
 
   // Set initial background colors
