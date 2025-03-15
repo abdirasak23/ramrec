@@ -118,8 +118,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   // User Authentication
   // -----------------------
   const { data: { session } } = await supabaseClient.auth.getSession();
-  const loginButton = document.querySelector('.login');
-  const profileContainer = document.querySelector('.profile');
+  const loginButton = document.querySelector('#login');
+  const profileContainer = document.querySelector('#profile');
 
   if (session) {
     loginButton.style.display = 'none';
@@ -131,6 +131,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     loginButton.addEventListener('click', () => window.location.href = 'login.html');
   }
   
+
+  // Select the menu button and navigation
+const menuButton = document.querySelector('.menu');
+const navMenu = document.querySelector('.nav');
+
+// Toggle the active class on click
+menuButton.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+
+
   // -----------------------
   // Category Button Styling & Recipes Load
   // -----------------------
@@ -243,7 +254,7 @@ subscribeButton.addEventListener('click', async () => {
   if (slider) {
     const images = slider.querySelectorAll('img');
     let currentIndex = 0;
-    const slideInterval = 3000; // time in milliseconds between slides
+    const slideInterval = 5000; // time in milliseconds between slides
 
     // Create a container for dots and append it to the slider
     const dotContainer = document.createElement('div');
