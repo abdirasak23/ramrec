@@ -335,22 +335,24 @@ select:focus{
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         padding: 0 10px;
-        /* background-color: blue; */
+        background-color: blue;
         overflow: hidden;
         width: 100%;
         box-sizing: border-box;
         overflow: hidden;
+        position: relative;
+        top: 100px;
     }
   
     .food-card {
-      max-width: 300px;
+      width: 360px;
       margin: 10px 0;
       left: 0;
       flex-direction: column;
-      height: auto;
+      height: 400px;
       padding: 10px;
-      position: absolute;
-      top: 200px;
+      position: relative;
+      top: 10px;
     }
 
     .content{
