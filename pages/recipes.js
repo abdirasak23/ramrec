@@ -62,6 +62,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     return data.map(recipe => ({ ...recipe, table: tableName }));
   }
 
+  const menuButton = document.querySelector('.menu');
+const navMenu = document.querySelector('.nav');
+
+// Toggle the active class on click
+menuButton.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+
   /**
    * Fetch and render recipes based on the selected category, filter, and search query.
    *

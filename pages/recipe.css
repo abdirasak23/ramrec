@@ -8,6 +8,108 @@ body {
     font-family: 'Rubik';
 }
 
+
+.login {
+  position: absolute;
+  right: 40px;
+  height: 50px;
+  width: 150px;
+  top: 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+}
+
+.heads {
+  height: 80px;
+  width: 100%;
+  /* background-color: green; */
+  display: flex;
+}
+
+.heads ul {
+  display: flex;
+  position: relative;
+  left: 230px;
+  gap: 50px;
+  font-weight: 500;
+}
+
+.add {
+  height: 50px;
+  width: 150px;
+  position: relative;
+  left: 300px;
+  top: 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+  font-size: 18px;
+  background-color: transparent;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+
+.add:focus {
+  background-color: black;
+  color: white;
+  border-radius: none;
+}
+
+.add i {
+  font-size: 25px;
+  position: relative;
+  top: 12px;
+}
+
+.add p {
+  position: relative;
+  top: 15px;
+}
+
+
+
+
+
+.heads ul li:hover {
+
+  color: #c4a700;
+  list-style-type: disc;
+}
+
+.heads li::marker {
+  color: #c4a700;
+}
+
+
+
+.heads ul li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.heads ul a {
+  text-decoration: none;
+  font-size: 20px;
+  position: relative;
+  top: 30px;
+  color: black;
+}
+
+.heads .logo {
+  position: relative;
+  left: 30px;
+  top: 20px;
+
+}
+
+
 .cats{
     height: 100px;
     width: 100%;
@@ -250,8 +352,32 @@ select:focus{
     font-size: 16px;
 }
 
+
+
+
+
+.logo h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800;
+  font-size: 34px;
+  color: black;
+}
+
+.logo span {
+  color: #FFBF00;
+}
+
+.heads a{
+  text-decoration: none;
+}
+
+
 .search input:focus{
     outline: none;
+}
+
+.nav {
+  display: none;
 }
 
 .search #cancel{
@@ -330,6 +456,117 @@ select:focus{
       font-size: 14px;
       font-family: 'Rubik';
     }
+
+    html, body {
+      overflow-x: hidden;
+  }
+  
+  
+  .left, .texts, .small_texts, .right {
+      width: 100% !important;
+      max-width: 300px; /* Adjust as needed */
+      left: 0 !important;
+    }
+
+  .heads {
+      /* background-color: grey; */
+      width: 100%;
+  }
+
+  .heads ul {
+      display: none;
+  }
+
+  .add {
+      display: none;
+  }
+
+  .login,
+  .profile {
+      display: none !important;
+  }
+
+
+  .nav.active {
+    display: block;
+}
+
+.nav li:focus {
+    background-color: blue;
+    list-style: none;
+}
+
+.nav li:hover {
+    list-style: none;
+}
+
+
+  .menu {
+      display: block;
+      position: relative;
+      left: 150px;
+      height: 40px;
+      width: 50px;
+      justify-content: center;
+      text-align: center;
+      top: 50px;
+      overflow: hidden;
+      background-color: transparent;
+      border: none;
+  }
+
+  .nav {
+      display: block;
+      height: 180px;
+      width: 180px;
+      background-color: rgb(39, 37, 37);
+      position: relative;
+      right: 0px;
+      z-index: 99;
+      top: 80px;
+      color: white;
+      display: none;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+  }
+
+  .nav ul {
+      display: block;
+      height: 40px;
+      color: white;
+      width: 100px;
+      position: absolute;
+      font-size: 10px;
+      left: 10px;
+  }
+
+  .nav ul a{
+      color: white;
+  }
+
+  .nav ul li {
+      border-bottom: 1px solid #ddd;
+  }
+
+  .nav.active {
+      display: block;
+  }
+
+  .nav li:focus {
+      background-color: blue;
+      list-style: none;
+  }
+
+  .nav li:hover {
+      list-style: none;
+  }
+
+
+
+  .menu i {
+      font-size: 24px;
+  }
+
   
     .cards {
         display: grid;
@@ -361,7 +598,10 @@ select:focus{
     }
     
     .view-btn{
-        width: 100px;
+        width: 320px !important;
+        position: relative;
+        left: 0px;
+        height: 50px;
     }
   
     .images {
@@ -422,6 +662,10 @@ select:focus{
       order: 3;
     }
 
+    .name{
+      width: 300px;
+    }
+
     
   
     .head h2 {
@@ -431,8 +675,10 @@ select:focus{
     }
   
     .name h2 {
-      font-size: 23px !important;
-      color: red;
+      font-size: 26px !important;
+      color: black;
+      position: relative;
+      bottom: 25px;
     }
   
     .content button {
