@@ -362,6 +362,8 @@ select:focus{
     
     .view-btn{
         width: 100px;
+        position: relative;
+        left: 40px;
     }
   
     .images {
@@ -432,7 +434,7 @@ select:focus{
   
     .name h2 {
       font-size: 23px !important;
-      color: red;
+      color: black;
     }
   
     .content button {
