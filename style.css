@@ -47,7 +47,7 @@ body {
     height: 50px;
     width: 150px;
     position: relative;
-    left: 340px;
+    left: 300px;
     top: 20px;
     border-radius: 10px;
     border: 1px solid black;
@@ -779,7 +779,19 @@ a {
 @media (max-width: 480px) {
     body {
         font-size: 14px;
+        outline: 1px solid red;
     }
+
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    
+    .left, .texts, .small_texts, .right, .delicios {
+        width: 100% !important;
+        max-width: 300px; /* Adjust as needed */
+        left: 0 !important;
+      }
 
     .heads {
         /* background-color: grey; */
@@ -809,7 +821,7 @@ a {
         text-align: center;
         top: 25px;
         overflow: hidden;
-        background-color: transparent;
+        background-color: red;
         border: none;
     }
 
@@ -907,8 +919,9 @@ a {
     }
 
     .products i{
-        position: absolute;
-        bottom: 20px !important;
+        position: relative;
+        font-size: 12px;
+        bottom: 10px;
     }
 
     .recipe_home{
@@ -941,6 +954,8 @@ a {
     /* background-color: red; */
     width: 310px;
     height: 230px;
+    position: relative;
+    left: 10px !important;
     
 
 }
@@ -974,16 +989,64 @@ font-size: 20px;
     /* background-color: yellow; */
     width: 300px;
     position: relative;
-    left: 10px;
+    left: 10px !important;
     height: 300px;
 }
+   
+.delis{
+    /* background-color: green; */
+    position: absolute;
+    left: 50px;
+    width: 200px;
+    height: 20px;
+}
+
+.delis h2{
+    font-size: 14px;
+}
+
+.emails{
+    /* background-color: red; */
+    position: absolute;
+    left: 0px;
+    width: 300px;
+    height: 60px;
+    top: 40px;
+}
+
+.emails h2{
+    font-size: 12px;
+
+}
+
+.email{
+    /* background-color: yellow; */
+    position: absolute;
+    left: 10px;
+    width: 280px;
+    top: 110px;
+    height: 50px;
     
+}
+
+.email input{
+    width: 150px;
+    font-size: 12px;
+    position: relative;
+    top: 5px;
+    height: 40px;
+}
+
+.subscribe{
+    width: 130px !important;
+}
 
 .delicios{
-    width: 300px;
+    /* width: 300px; */
     position: relative;
     top: 240px;
-    left: 10px;
+    left: 10px !important;
+    height: 200px;
 }
 
 .footer{
@@ -1000,18 +1063,370 @@ font-size: 20px;
 
 .links{
     position: relative;
-    top: -20px;
+    top: -10px;
     left: 20px;
 }
 
 .links ul a{
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .last{
     position: relative;
-    top: 210px;
+    top: 225px;
 }
+
+.last h5{
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+@media only screen and (max-width: 768px) and (min-width: 480px) {
+    body{
+        /* background-color: blue; */
+    }
+
+    body {
+        font-size: 14px;
+        outline: 1px solid red;
+    }
+
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    
+    .left, .texts, .small_texts, .right {
+        width: 100% !important;
+        max-width: 300px; /* Adjust as needed */
+        left: 0 !important;
+      }
+
+    .heads {
+        /* background-color: grey; */
+        width: 100%;
+    }
+
+    .heads ul {
+        display: none;
+    }
+
+    .add {
+        display: none;
+    }
+
+    .login,
+    .profile {
+        display: none !important;
+    }
+
+    .menu {
+        display: block;
+        position: relative;
+        left: 320px;
+        height: 40px;
+        width: 50px;
+        justify-content: center;
+        text-align: center;
+        top: 25px;
+        overflow: hidden;
+        background-color: transparent;
+        border: none;
+    }
+
+    .nav {
+        display: block;
+        height: 180px;
+        width: 180px;
+        background-color: rgb(39, 37, 37);
+        position: absolute;
+        right: 0px;
+        z-index: 99;
+        top: 60px;
+        color: white;
+        display: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .nav ul {
+        display: block;
+        height: 40px;
+        color: white;
+        width: 100px;
+        position: absolute;
+        font-size: 10px;
+        left: 10px;
+    }
+
+    .nav ul a{
+        color: white;
+    }
+
+    .nav ul li {
+        border-bottom: 1px solid #ddd;
+    }
+
+    .nav.active {
+        display: block;
+    }
+
+    .nav li:focus {
+        background-color: blue;
+        list-style: none;
+    }
+
+    .nav li:hover {
+        list-style: none;
+    }
+
+
+
+    .menu i {
+        font-size: 24px;
+    }
+
+
+    .start{
+        width: 550px;
+        position: relative;
+        left: 10px;
+    }
+
+    .categories{
+        /* background-color: grey; */
+        position: relative;
+        left: 0px;
+        gap: 0px;
+        width: 100%;
+        height: 70px;
+    }
+
+    .cat{
+        font-size: 12px;
+        /* background-color: blue; */
+        position: relative;
+        left: 5px;
+        width: 600px;
+        height: 70px;
+    }
+
+    .products{
+        height: 40px;
+        width: 120px;
+        font-size: 12px;
+        display: flex;
+        position: absolute;
+        left: 0px;
+        bottom: 10px ;
+
+    }
+
+    .products h2{
+        font-size: 16px;
+        position: relative;
+        top: 10px;
+    }
+
+    .products i{
+        position: relative;
+        font-size: 18px;
+        bottom: 10px;
+    }
+
+    .recipe_home{
+        /* background-color: red; */
+        width: 100%;
+    }
+    .recipe_cards{
+        /* background-color: blue; */
+        position: relative;
+        left: -20px ;
+    }
+
+    .cards{
+        /* background-color: yellow; */
+        width: 220px;
+        position: relative;
+        left: -10px;
+        display: grid;
+        gap: 5px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    
+.cheffs{
+    /* background-color: blue; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.left{
+    /* background-color: red; */
+    width: 260px !important;
+    height: 230px;
+    position: relative;
+    left: 10px !important;
+    
+
+}
+
+.texts {
+    /* background-color: green; */
+    width: 500px !important;
+    position: relative;
+    left: 10px;
+}
+
+.texts h2{
+font-size: 22px;
+}
+
+.small_texts {
+    /* background-color: yellow; */
+    width: 500px;
+    overflow: hidden;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    height: 200px;
+}
+
+.learn_more{
+    display: block;
+    position: absolute;
+    top: 240px;
+    left: 0px;
+}
+
+.right{
+    /* background-color: yellow; */
+    width: 300px;
+    position: relative;
+    left: -10px !important;
+    height: 300px;
+}
+   
+.delis{
+    /* background-color: green; */
+    position: absolute;
+    left: 150px;
+    width: 250px;
+    height: 20px;
+}
+
+.delis h2{
+    font-size: 18px;
+}
+
+.emails{
+    /* background-color: red; */
+    position: absolute;
+    left: 70px;
+    width: 400px;
+    height: 60px;
+    top: 40px;
+}
+
+.emails h2{
+    font-size: 14px;
+
+}
+
+.email{
+    /* background-color: yellow; */
+    position: absolute;
+    left: 80px;
+    width: 380px;
+    top: 110px;
+    height: 50px;
+    
+}
+
+.email input{
+    width: 250px;
+    font-size: 16px;
+    position: relative;
+    top: 5px;
+    height: 40px;
+}
+
+.subscribe{
+    width: 130px !important;
+    position: relative;
+    /* left: 80px; */
+}
+
+.delicios{
+    width: 550px;
+    position: relative;
+    top: 10px;
+    left: 10px !important;
+    height: 200px;
+}
+
+.footer{
+    /* background-color: red; */
+    position: relative;
+    top: 10px;
+    height: 80px;
+    display: flex;
+}
+
+.foot{
+    /* background-color: blue; */
+    position: relative;
+    left: -20px;
+    width: 300px;
+}
+
+.loga h1{
+    font-size: 30px;
+}
+
+.desc h2{
+    font-size: 12px;
+    position: relative;
+    bottom: 10px;
+}
+
+.links{
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+.links ul a{
+    font-size: 14px;
+}
+
+.last{
+    position: relative;
+    top: 10px;
+}
+
+.last h5{
+    font-size: 12px;
+}
+
+
+
+
+
+
 
 
 }
