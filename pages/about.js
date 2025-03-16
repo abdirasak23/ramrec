@@ -41,3 +41,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+window.addEventListener('scroll', function() {
+  const aboutEl = document.querySelector('.about');
+  // Set the element's top value equal to the current scroll offset.
+  // This makes it appear to remain at the top even though it's absolute.
+  aboutEl.style.top = window.scrollY + 'px';
+});

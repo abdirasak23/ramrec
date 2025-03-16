@@ -393,3 +393,276 @@ body {
 a{
     text-decoration: none;
 }
+
+
+@media (max-width: 480px){
+    body {
+        font-size: 14px;
+        font-family: 'Rubik';
+      }
+  
+      html, body {
+        overflow-x: hidden;
+    }
+    
+    
+    .left, .texts, .small_texts, .right {
+        width: 100% !important;
+        max-width: 300px; /* Adjust as needed */
+        left: 0 !important;
+      }
+  
+    .heads {
+        /* background-color: grey; */
+        width: 100%;
+    }
+  
+    .heads ul {
+        display: none;
+    }
+  
+    .add {
+        display: none;
+    }
+  
+    .login,
+    .profile {
+        display: none !important;
+    }
+  
+  
+    .nav.active {
+      display: block;
+  }
+  
+  .nav li:focus {
+      background-color: blue;
+      list-style: none;
+  }
+  
+  .nav li:hover {
+      list-style: none;
+  }
+  
+  
+    .menu {
+        display: block;
+        position: relative;
+        left: 150px;
+        height: 40px;
+        width: 50px;
+        justify-content: center;
+        text-align: center;
+        top: 50px;
+        overflow: hidden;
+        background-color: transparent;
+        border: none;
+    }
+  
+    .nav {
+        display: block;
+        height: 180px;
+        width: 180px;
+        background-color: rgb(39, 37, 37);
+        position: relative;
+        right: 0px;
+        z-index: 99;
+        top: 80px;
+        color: white;
+        display: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+  
+    .nav ul {
+        display: block;
+        height: 40px;
+        color: white;
+        width: 100px;
+        position: absolute;
+        font-size: 10px;
+        left: 10px;
+    }
+  
+    .nav ul a{
+        color: white;
+    }
+  
+    .nav ul li {
+        border-bottom: 1px solid #ddd;
+    }
+  
+    .nav.active {
+        display: block;
+    }
+  
+    .nav li:focus {
+        background-color: blue;
+        list-style: none;
+    }
+  
+    .nav li:hover {
+        list-style: none;
+    }
+  
+  
+  
+    .menu i {
+        font-size: 24px;
+    }
+
+    .about {
+        background: linear-gradient(to right, #270082, #6d1a8b);
+        position: absolute;
+        height: 150px;
+        width: 100%;
+        top: 0px;
+        border-bottom-left-radius: 40% 20px;
+        border-bottom-right-radius: 40% 20px;
+        z-index: -1;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .about h2{
+        position: relative;
+        top: 70px;
+    }
+
+    .about p{
+        position: relative;
+        font-size: 14px;
+        width: 300px;
+        top: 70px;
+        left: 60px;
+    }
+
+    .about-description{
+        display: grid;
+        grid-template-columns: 1fr;
+        /* background-color: blue; */
+        top: 80px;
+    }
+
+    .head {
+        /* background-color: green; */
+
+    }
+
+    .head h2{
+        font-size: 18px;
+        position: relative;
+        left: 10px;
+    }
+
+    .info {
+        /* background-color: grey; */
+        width: 380px;
+        bottom: 20px;
+        position: relative;
+    }
+
+    .info p{
+        left: 10px;
+        position: relative;
+    }
+    .line{
+        position: relative;
+        top: 100px;
+        left: 10px;
+        width: 380px;
+    }
+
+    .goals {
+        position: relative;
+        top: 100px;
+        /* background-color: green; */
+        left: 10px;
+        gap: 10px;
+    }
+
+    .goal-description{
+        position: relative;
+        top: 100px;
+        left: 10px;
+        /* background-color: red; */
+    }
+
+    .goal-description h2{
+        position: relative;
+        left: 0px;
+    }
+
+    .mission{
+        width: 120px;
+    }
+
+    .right{
+        position: relative;
+        left: 10px;
+        /* background-color: yellow; */
+    }
+
+    .pic{
+        position: relative;
+        left: 10px;
+        top: 90px;
+    }
+
+    .footer{
+        /* background-color: red; */
+        position: relative;
+        top: 480px;
+        height: 180px;
+        display: grid;
+        
+    }
+
+    .loga{
+        position: relative;
+        left: -20px;
+    }
+
+    .desc {
+        position: relative;
+        left: -20px;
+        
+    }
+    
+    .desc h2{
+        font-size: 12px;
+        position: relative;
+        bottom: 20px;
+    }
+    
+    .links{
+        position: relative;
+        top: -10px;
+        left: 60px;
+    }
+    
+    .links ul a{
+        font-size: 14px;
+    }
+    
+    .foot{
+        position: relative;
+        left: 40px;
+    }
+    
+    .last{
+        position: relative;
+        top: 225px;
+        left: -10px;
+    }
+    
+    .last h5{
+        font-size: 12px;
+    }
+
+    .social{
+        position: absolute;
+    }
+    
+  
+}
