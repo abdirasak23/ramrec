@@ -821,7 +821,7 @@ a {
         text-align: center;
         top: 25px;
         overflow: hidden;
-        background-color: red;
+        background-color: transparent;
         border: none;
     }
 
