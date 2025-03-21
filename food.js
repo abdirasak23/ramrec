@@ -11,6 +11,14 @@ const urlParams = new URLSearchParams(window.location.search);
 const foodId = urlParams.get('id');
 const table = urlParams.get('table') || 'foods';
 
+const menuButton = document.querySelector('.menu');
+const navMenu = document.querySelector('.nav');
+
+// Toggle the active class on click
+menuButton.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+
 // Render the food details on the page
 function renderFoodDetails(food) {
   // Update the page title

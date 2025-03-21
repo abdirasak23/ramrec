@@ -16,6 +16,23 @@ document.addEventListener('DOMContentLoaded', async () => {
   const searchInput = document.querySelector('.search input');
   const cancelIcon = document.getElementById('cancel'); // Cancel icon for search
 
+
+  const addButton = document.querySelector('.add');
+
+    // Add event listener for click event
+    addButton.addEventListener('click', async () => {
+        const { data: { session } } = await supabaseClient.auth.getSession();
+
+        if (session) {
+            // User is logged in, redirect to admin page
+            window.location.href = '/admin.html';
+        } else {
+            // User is not logged in, redirect to login page
+            window.location.href = '/login.html';
+        }
+    });
+
+
   // Hide cancel icon by default
   cancelIcon.style.display = 'none';
 

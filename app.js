@@ -118,8 +118,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   // User Authentication
   // -----------------------
   const { data: { session } } = await supabaseClient.auth.getSession();
-  const loginButton = document.querySelector('#login');
-  const profileContainer = document.querySelector('#profile');
+  const loginButton = document.querySelector('.login');
+  const profileContainer = document.querySelector('.profile');
 
   if (session) {
     loginButton.style.display = 'none';

@@ -397,6 +397,26 @@ select:focus{
     display: none;
 }
 
+.add{
+  position: relative;
+  top: 30px;
+}
+
+.profile, .login, .menu {
+  display: none;
+}
+
+.add p {
+  position: relative;
+  top: -4px;
+}
+
+.add i {
+  font-size: 25px;
+  position: relative;
+  top: 12px;
+}
+
 /* Add this at the bottom of your existing CSS */
 
 /* Tablet Styles (768px and below) */

@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
         "Our Value": "At RamRec, we are committed to quality foods—curating only the finest recipes that bring exceptional taste and nutritional value to your table. Our dedication to culinary excellence has not only enriched the cooking experiences of our community but has also established RamRec as a premium platform with an estimated market value of 1 billion USD."
     };
 
+
+    
+
+
+
     // Get all tab elements and the description element.
     const tabs = document.querySelectorAll('.goals .mission');
     const goalDescription = document.querySelector('.goal-description h2');
@@ -43,9 +48,9 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-window.addEventListener('scroll', function() {
-  const aboutEl = document.querySelector('.about');
-  // Set the element's top value equal to the current scroll offset.
-  // This makes it appear to remain at the top even though it's absolute.
-  aboutEl.style.top = window.scrollY + 'px';
+window.addEventListener('scroll', function () {
+    const aboutEl = document.querySelector('.about');
+    // Set the element's top value equal to the current scroll offset.
+    // This makes it appear to remain at the top even though it's absolute.
+    aboutEl.style.top = window.scrollY + 'px';
 });
