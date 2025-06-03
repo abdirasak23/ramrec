@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-    background-color: #FCF5E5;
+    background-color: #ffff;
     margin: 0px;
     padding: 0px;
     font-family: 'Rubik';
@@ -37,6 +37,7 @@ body {
   left: 230px;
   gap: 50px;
   font-weight: 500;
+  bottom: 10px;
 }
 
 .add {
@@ -231,7 +232,7 @@ body {
 .cat{
     height: 60px;
     width: 1200px;
-    border: 2px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.292);
     border-radius: 20px;
     position: relative;
     top: 20px;
@@ -259,7 +260,7 @@ body {
     font-size: 16px;
     font-weight: 500;
     border: none;
-    background-color: #FCF5E5;
+    background-color: #fff;
     width: auto;
     
 }
@@ -294,7 +295,7 @@ select:focus{
     left: 5px;
     top: 5px;
     border-radius: 5px;
-    background-color: #FCF5E5;
+    background-color: #fff;
     font-size: 16px;
     font-weight: 500;
     border: none;
@@ -353,6 +354,22 @@ select:focus{
 }
 
 
+ .logo {
+    position: relative;
+    left: 30px;
+    top: 20px;
+    background-color: green;
+    height: 50px;
+    width: 260px;
+    overflow: hidden;
+
+}
+
+.logo img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 
 
 

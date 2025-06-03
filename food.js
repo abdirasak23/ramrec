@@ -25,11 +25,11 @@ function renderFoodDetails(food) {
   document.title = `${food.food_name} Recipe | RAMREC`;
 
   // Update header ad section
-  const adImage = document.querySelector('.ad img');
-  if (adImage) {
-    adImage.src = food.ad_image_url;  
-    adImage.alt = food.food_name;
-  }
+  // const adImage = document.querySelector('.ad img');
+  // if (adImage) {
+  //   adImage.src = food.ad_image_url;  
+  //   adImage.alt = food.food_name;
+  // }
   const adHeading = document.querySelector('.ad h2');
   if (adHeading) {
     adHeading.textContent = food.food_name;

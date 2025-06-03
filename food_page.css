@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
     background-color: #FFFFF0;
     margin: 0px;
     padding: 0px;
-    font-family: 'Rubik';
+    font-family: 'Poppins', sans-serif;
 }
 
 a{
@@ -17,33 +17,33 @@ a{
     padding: 0px;
 }
 
-.head {
+.header {
     height: 80px;
     width: 100%;
     /* background-color: green; */
     display: flex;
 }
 
-.head ul {
+.header ul {
     display: flex;
     position: relative;
-    left: 340px;
+    left: 240px;
     gap: 40px;
     font-weight: 500;
 }
 
-.head ul li {
+.header ul li {
     text-decoration: none;
     list-style: none;
     
 }
 
-.head ul li:hover {
+.header ul li:hover {
     color: #c4a700;
     list-style-type: disc;
 }
 
-.head li::marker {
+.header li::marker {
     color: #c4a700;
 }
 
@@ -51,7 +51,7 @@ a{
 
 
 
-.head ul a {
+.header ul a {
     text-decoration: none;
     font-size: 22px;
     position: relative;
@@ -61,11 +61,21 @@ a{
 
 
 
-.head .logo {
+.header .logo {
     position: relative;
     left: 30px;
     top: 20px;
+    background-color: green;
+    height: 50px;
+    width: 260px;
+    overflow: hidden;
 
+}
+
+.logo img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .logo h1{
@@ -93,6 +103,7 @@ a{
     top: 100px;
     left: 20px;
     font-weight: 500;
+    color: white;
 }
 
 .ad h2 {
@@ -110,7 +121,7 @@ a{
     top: 20px;
     left: 30px;
     display: flex;
-    gap: 80px;
+    gap: 100px;
 }
 
 .food_details {
@@ -120,6 +131,17 @@ a{
     position: relative;
     display: flex;
     left: 40px;
+
+}
+
+#name{
+    position: relative;
+    left: 0px;
+}
+
+#the-name{
+    width: 240px;
+    bottom: 5px;
 
 }
 
@@ -147,10 +169,10 @@ a{
     width: 150px;
     /* background-color: white; */
     position: relative;
-    top: 20px;
+    top: 25px;
 }
 
-.name .head {
+.name .heads {
     height: 20px;
     width: 150px;
     /* background-color: blue; */
@@ -158,7 +180,7 @@ a{
     left: 7px;
 }
 
-.name .head h2 {
+.name .heads h2 {
     font-size: 16px;
     font-weight: 400;
 
@@ -251,7 +273,7 @@ a{
     width: 100%;
     /* background-color: grey; */
     position: relative;
-    top: 20px;
+    top: 40px;
     display: flex;
     overflow: hidden;
 }
@@ -259,7 +281,7 @@ a{
 .consists {
     height: 300px;
     width: 700px;
-    background-color: #FCF5E5;
+    background-color: #fff;
     position: relative;
     left: 30px;
     border-radius: 20px;
@@ -303,7 +325,7 @@ a{
 .nutritions {
     height: 300px;
     width: 480px;
-    background-color: #FCF5E5;
+    background-color: #fff;
     position: relative;
     left: 40px;
     border-radius: 20px;
@@ -370,17 +392,24 @@ a{
         /* background-color: blue; */
         outline: 2px solid red;
     }
-
-    html, body{
-        /* overflow-x: hidden; */
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
     }
+    
 
-    .head{
+    
+
+    .heads{
         /* background-color: red; */
         width: 100%;
+        overflow: hidden;
     }
 
-    .head .main-nav{
+    .heads .main-nav{
         display: none;
     }
 
@@ -388,7 +417,7 @@ a{
     .menu {
         display: block;
         position: relative;
-        left: 100px;
+        left: 140px;
         height: 40px;
         width: 50px;
         justify-content: center;
@@ -453,10 +482,11 @@ a{
 
 
     .ad{
-    width: 320px;
+    width: 100%;
     position: relative;
     left: 2px;
     height: 200px;
+    overflow: hidden;
     }
 
     .ad h3{
@@ -470,14 +500,15 @@ a{
     }
 
     .stages{
-        /* background-color: yellow; */
+        background-color: yellow;
         position: relative;
         left: 0px;
         gap: 0px;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        width: 350px;
+        width: 100%;
         height: 250px;
+        overflow: hidden;
     }
 
     .food_details{
@@ -520,18 +551,33 @@ a{
     }
 
     .description{
-        /* background-color: red; */
-        width: 350px;
+        background-color: red;
+        width: 100%;
         display: grid;
         height: 500px;
         gap: 0px;
+        overflow: hidden;
     }
 
+    .desc{
+        background-color: grey;
+        position: relative;
+        left: 0px;
+        top: 40px;
+    }
+
+
+
     .description_text{
-        /* background-color: blanchedalmond; */
+        background-color: blanchedalmond;
         width: 340px;
         position: relative;
         left: 0px;
+    }
+
+    .text{
+        position: relative;
+        top: 40px;
     }
 
     .text h2{
@@ -548,13 +594,16 @@ a{
     .contains {
         display: grid;
         grid-template-columns: 1fr;
-        width: 350px;
+        width: 100%;
         position: relative;
         left: 0px;
-        /* background-color: red; */
+        background-color: red;
         height: 700px;
         gap: 0px;
+        overflow: hidden;
     }
+
+    
 
     .consists{
         position: relative;

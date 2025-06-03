@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // Ensure only the admin account can log in
-            if (data.user.email !== "adminabka@gmail.com") {
+            if (data.user.email !== "cuno@horeye.me") {
                 alert("Access denied! Only the admin can log in.");
                 
                 // Log out the unauthorized user
