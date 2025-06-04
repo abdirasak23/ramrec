@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="food_page.css">
+    <title>YouTube Video Player</title>
+    <style>
+        /* Essential container styles */
+        .food_image {
+            position: relative;
+            width: 800px;
+            max-width: 100%;
+            height: 450px; /* Fixed height for video */
+            overflow: hidden;
+            background: #000;
+            margin: 20px auto;
+        }
+        
+        /* Thumbnail image */
+        #thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Essential iframe styles */
+        #youtubePlayer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="food_image" id="videoContainer">
+        <!-- Thumbnail image -->
+        <img src="images/ast.jpg" alt="Video Thumbnail" id="thumbnail">
+
+        <!-- Single overlay element -->
+        <div class="video-overlay" id="thumbnailOverlay">
+            <div class="play-button" id="playButton">
+                <div class="play-icon"></div>
+            </div>
+        </div>
+
+        <!-- YouTube badge -->
+        <div class="youtube-badge">YouTube</div>
+
+        <!-- Video duration -->
+        <div class="video-duration">10:25</div>
+
+        <!-- YouTube iframe -->
+        <iframe id="youtubePlayer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        // YouTube video ID
+        const YOUTUBE_VIDEO_ID = '5Peo-ivmupE';
+        
+        // Get DOM elements
+        const thumbnailOverlay = document.getElementById('thumbnailOverlay');
+        const playButton = document.getElementById('playButton');
+        const youtubePlayer = document.getElementById('youtubePlayer');
+        
+        // Play video function
+        function playVideo() {
+            // Hide the overlay
+            thumbnailOverlay.style.display = 'none';
+            
+            // Show and load the YouTube player
+            youtubePlayer.style.display = 'block';
+            youtubePlayer.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0`;
+            
+            // Set focus to the iframe for keyboard users
+            youtubePlayer.focus();
+        }
+        
+        // Click event for overlay
+        thumbnailOverlay.addEventListener('click', playVideo);
+        
+        // Click event for play button
+        playButton.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent triggering the overlay click
+            playVideo();
+        });
+        
+        // Keyboard support for overlay
+        thumbnailOverlay.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                playVideo();
+            }
+        });
+        
+        // Make thumbnail focusable
+        thumbnailOverlay.setAttribute('tabindex', '0');
+    </script>
+</body>
+</html>

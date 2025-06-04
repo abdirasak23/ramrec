@@ -210,6 +210,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       const category = categorySelect.value;
 
+      // Get YouTube video fields
+      const videoIdInput = document.getElementById('videoIdInput');
+      const videoCreditInput = document.getElementById('videoCreditInput');
+
       // Prepare the form data from your inputs.
       const formData = {
         food_name: document.querySelector('.foodinfo .details:first-child input').value.trim(),
@@ -221,7 +225,10 @@ document.addEventListener('DOMContentLoaded', () => {
         protein: parseInt(document.querySelector('.nutritions .nutri:nth-child(1) input').value) || 0,
         vitamin: parseInt(document.querySelector('.nutritions .nutri:nth-child(2) input').value) || 0,
         calories: parseInt(document.querySelector('.nutritions .nutri:nth-child(3) input').value) || 0,
-        carbohydrates: parseInt(document.querySelector('.nutritions .nutri:nth-child(4) input').value) || 0
+        carbohydrates: parseInt(document.querySelector('.nutritions .nutri:nth-child(4) input').value) || 0,
+        // Add YouTube video fields
+        video_id: videoIdInput ? videoIdInput.value.trim() : '',
+        video_credit: videoCreditInput ? videoCreditInput.value.trim() : ''
       };
 
       // Extract ingredients from the tags container as an array.
@@ -297,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Food image URL:', foodImageUrl);
       console.log('Ad image URL:', adImageUrl);
 
-      // Insert data (including the ingredients array) into the table corresponding to the selected category.
+      // Insert data (including the ingredients array and video fields) into the table corresponding to the selected category.
       console.log(`Inserting data into ${category} table...`);
       const { data: insertData, error: insertError } = await supabase
         .from(category)

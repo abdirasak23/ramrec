@@ -301,3 +301,52 @@ subscribeButton.addEventListener('click', async () => {
     }
   }
 });
+
+
+async function isUserAuthenticated() {
+  try {
+    const { data: { session }, error } = await supabase.auth.getSession();
+    if (error) {
+      console.error('Error checking authentication status:', error.message);
+      return false;
+    }
+    return !!session;
+  } catch (err) {
+    console.error('Unexpected error checking authentication:', err);
+    return false;
+  }
+}
+
+
+async function toggleAddButton() {
+  try {
+    // Check authentication status
+    const { data: { session }, error } = await supabaseClient.auth.getSession();
+    
+    if (error) {
+      console.error('Auth check error:', error);
+      return;
+    }
+
+    // Get the add button by class
+    const addButton = document.querySelector('.add');
+    
+    if (addButton) {
+      if (session) {
+        // User is authenticated - show button
+        addButton.style.display = 'block';
+      } else {
+        // User is not authenticated - hide button
+        addButton.style.display = 'none';
+      }
+    }
+    
+  } catch (error) {
+    console.error('Error in toggleAddButton:', error);
+    // Hide button on error
+    const addButton = document.querySelector('.add');
+    if (addButton) {
+      addButton.style.display = 'none';
+    }
+  }
+}

@@ -43,6 +43,7 @@ body {
 }
 
 .add {
+    display: none;
     height: 50px;
     width: 150px;
     position: relative;

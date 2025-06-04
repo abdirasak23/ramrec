@@ -158,6 +158,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize character counters for food description input (387 characters)
   const foodDescInput = document.querySelector('.foodinfo .details:last-child .name input');
   const foodDescCounter = document.querySelector('.foodinfo .details:last-child h5 span');
+
+  const videoId = document.getElementById('videoIdInput')?.value.trim();
+const videoCredit = document.getElementById('videoCreditInput')?.value.trim();
+
   
   if (foodDescInput && foodDescCounter) {
     initializeCharacterCounter(foodDescInput, 387, foodDescCounter);
@@ -292,6 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Add ingredients array to the recipe data
       recipeData.ingredients = ingredientsArray;
+      
       
       // Get the category (dinner, iftar, sahur, breakfast)
       const category = formData.get("category") || "dinner";

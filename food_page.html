@@ -140,9 +140,26 @@
                     flavor.</h2> <!-- food descriptions -->
             </div>
         </div>
-        <div class="food_image">
-            <img src="images/ast.jpg" alt=""> <!-- food image -->
+        <div class="food_image" id="videoContainer">
+        <!-- Thumbnail image -->
+        <img src="images/ast.jpg" alt="Video Thumbnail" id="thumbnail">
+
+        <!-- Single overlay element -->
+        <div class="video-overlay" id="thumbnailOverlay">
+            <div class="play-button" id="playButton">
+                <div class="play-icon"></div>
+            </div>
         </div>
+
+        <!-- YouTube badge -->
+        
+
+        <!-- Video duration -->
+        <div class="video-duration">Credit: Vedio by: Cunto kariso</div>
+
+        <!-- YouTube iframe -->
+        <iframe id="youtubePlayer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
     </div>
 
 
@@ -168,8 +185,16 @@
         </div>
     </div>
 
+
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="food.js"></script>
+
+
+    <script>
+        // YouTube video ID
+       
+    </script>
 
 </body>
 
