@@ -45,9 +45,9 @@ async function loadRecipes(category = 'all types') {
     if (cat === 'all types') {
       // Fetch from all three tables concurrently.
       const [dinnerResult, sahurResult, iftarResult] = await Promise.all([
-        supabaseClient.from('dinner').select('*').limit(8),
-        supabaseClient.from('sahur').select('*'),
-        supabaseClient.from('iftar').select('*')
+        supabaseClient.from('breakfast').select('*').limit(8),
+        supabaseClient.from('launch').select('*'),
+        supabaseClient.from('dinner').select('*')
       ]);
 
       if (dinnerResult.error) throw dinnerResult.error;
@@ -55,19 +55,19 @@ async function loadRecipes(category = 'all types') {
       if (iftarResult.error) throw iftarResult.error;
 
       // Attach table information to each item
-      const dinnerData = dinnerResult.data.map(item => ({ ...item, table: 'dinner' }));
-      const sahurData = sahurResult.data.map(item => ({ ...item, table: 'sahur' }));
-      const iftarData = iftarResult.data.map(item => ({ ...item, table: 'iftar' }));
+      const dinnerData = dinnerResult.data.map(item => ({ ...item, table: 'breakfast' }));
+      const sahurData = sahurResult.data.map(item => ({ ...item, table: 'launch' }));
+      const iftarData = iftarResult.data.map(item => ({ ...item, table: 'dinner' }));
 
       data = [...dinnerData, ...sahurData, ...iftarData];
-    } else if (cat === 'sahur') {
-      const { data: sahurData, error } = await supabaseClient.from('sahur').select('*');
+    } else if (cat === 'breakfast') {
+      const { data: sahurData, error } = await supabaseClient.from('breakfast').select('*');
       if (error) throw error;
-      data = sahurData.map(item => ({ ...item, table: 'sahur' }));
-    } else if (cat === 'iftar') {
-      const { data: iftarData, error } = await supabaseClient.from('iftar').select('*');
+      data = sahurData.map(item => ({ ...item, table: 'breakfast' }));
+    } else if (cat === 'launch') {
+      const { data: iftarData, error } = await supabaseClient.from('launch').select('*');
       if (error) throw error;
-      data = iftarData.map(item => ({ ...item, table: 'iftar' }));
+      data = iftarData.map(item => ({ ...item, table: 'launch' }));
     } else if (cat === 'dinner') {
       const { data: dinnerData, error } = await supabaseClient.from('dinner').select('*').limit(8);
       if (error) throw error;

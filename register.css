@@ -2,36 +2,288 @@
 
 
 
-*{
+* {
     padding: 0px;
     margin: 0px;
     font-family: 'Rubik';
     overflow: hidden;
 }
 
-.containers{
+.containers {
     height: 100vh;
     width: 100%;
     display: flex;
 }
 
-.left, .right{
+.left,
+.right {
     flex: 1;
     height: 100vh;
     align-items: center;
     justify-content: center;
 }
 
-.left{
-    background-color: black;
+.left {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     overflow: hidden;
+    flex-direction: column;
 }
 
-.right{
-    background-color: #FFFFF0;
+/* Animated background elements */
+.bg-decoration {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    animation: float 6s ease-in-out infinite;
 }
 
-.logincontainer{
+.bg-decoration:nth-child(1) {
+    top: -100px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.bg-decoration:nth-child(2) {
+    bottom: -150px;
+    right: -150px;
+    animation-delay: 3s;
+    width: 400px;
+    height: 400px;
+}
+
+.bg-decoration:nth-child(3) {
+    top: 50%;
+    left: -200px;
+    animation-delay: 1.5s;
+    width: 200px;
+    height: 200px;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+    }
+}
+
+/* Main content container */
+.content-wrapper {
+    z-index: 10;
+    text-align: center;
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
+/* Top section */
+.top-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: red;
+    position: relative;
+    bottom: 20px;
+}
+
+.logo-section {
+    margin-bottom: 2rem;
+    background-color: blue;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.logo::before {
+    content: "⚡";
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    background: linear-gradient(45deg, #ffffff, #e0e7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.features {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    min-width: 150px;
+    transition: all 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.feature-text {
+    color: white;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Bottom feedback section */
+.feedback-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.feedback-title {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.testimonial {
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.user-details {
+    text-align: left;
+}
+
+.user-name {
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.user-role {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+}
+
+.stars {
+    color: #ffd700;
+    margin-bottom: 0.5rem;
+}
+
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .features {
+        gap: 1rem;
+    }
+
+    .feature {
+        min-width: 120px;
+        padding: 1rem;
+    }
+
+    .left {
+        padding: 1rem;
+    }
+}
+
+
+
+.logincontainer {
     background-color: #FFFFF0;
     height: 500px;
     width: 500px;
@@ -42,8 +294,7 @@
     display: block;
 }
 
-.start
-{
+.start {
 
     /* background-color: rgba(0, 0, 0, 0.324); */
     height: 50px;
@@ -54,14 +305,14 @@
     text-align: center;
 }
 
-.start h2{
+.start h2 {
     position: relative;
     top: 10px;
     font-size: 28px;
     color: blue;
 }
 
-.email{
+.email {
     height: 50px;
     width: 400px;
     background-color: transparent;
@@ -74,7 +325,7 @@
     border: 2px solid rgb(127, 127, 231);
 }
 
-#email{
+#email {
     height: 40px;
     width: 350px;
     position: relative;
@@ -86,12 +337,12 @@
 
 }
 
-#email:focus{
+#email:focus {
     border: none;
     outline: none;
 }
 
-.email i{
+.email i {
     font-size: 24px;
     position: relative;
     left: 20px;
@@ -99,7 +350,7 @@
     color: #534d4d;
 }
 
-.password{
+.password {
     height: 50px;
     width: 400px;
     background-color: transparent;
@@ -112,7 +363,7 @@
     border: 2px solid rgb(127, 127, 231);
 }
 
-#password{
+#password {
     height: 40px;
     width: 300px;
     position: relative;
@@ -124,12 +375,12 @@
 
 }
 
-#password:focus{
+#password:focus {
     border: none;
     outline: none;
 }
 
-.password i{
+.password i {
     font-size: 24px;
     position: relative;
     left: 20px;
@@ -137,7 +388,7 @@
     color: #534d4d;
 }
 
-button{
+button {
     height: 50px;
     width: 405px;
     position: relative;
@@ -151,20 +402,20 @@ button{
     cursor: pointer;
 }
 
-h5{
+h5 {
     position: relative;
     top: 75px;
     font-size: 16px;
     left: 280px;
-    font-weight:400;
+    font-weight: 400;
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
 
-.left video{
+.left video {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -172,7 +423,7 @@ a{
 
 
 
-.or{
+.or {
     height: 40px;
     width: 580px;
     /* background-color: red; */
@@ -180,16 +431,16 @@ a{
     left: 10px;
     top: 50px;
     display: flex;
-    
+
 }
 
 
-.or .reg{
+.or .reg {
     position: relative;
     left: 200px;
 }
 
-.or h2{
+.or h2 {
     font-weight: 400;
     position: relative;
     left: 60px;
@@ -197,13 +448,12 @@ a{
     word-spacing: 5px;
 }
 
-.or a{
+.or a {
     text-decoration: underline;
     color: blue;
 }
 
-.terms
-{
+.terms {
     /* background-color: grey; */
     height: 40px;
     width: 400px;
@@ -215,20 +465,20 @@ a{
 
 }
 
-.terms a{
+.terms a {
     color: blue;
     text-decoration: underline;
 }
 
-.password a i{
+.password a i {
     position: absolute;
-    left:  365px;
+    left: 365px;
     font-size: 20px;
     top: 15px;
 }
 
 
-.alert{
+.alert {
     height: 50px;
     width: 400px;
     background-color: red;
@@ -238,17 +488,17 @@ a{
     border-radius: 10px;
     text-align: start;
     display: none;
-    
+
 }
 
-.alert p{
+.alert p {
     position: relative;
     top: 15px;
     left: 20px;
     color: white;
 }
 
-.alert button{
+.alert button {
     height: 20px;
     width: 20px;
     background-color: rgba(255, 255, 255, 0.342);
@@ -259,9 +509,9 @@ a{
     display: none;
 }
 
-.alert i{
+.alert i {
     position: relative;
     top: 2px;
     color: white;
-    
+
 }

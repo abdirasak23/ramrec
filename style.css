@@ -37,7 +37,7 @@ body {
 .heads ul {
     display: flex;
     position: relative;
-    left: 230px;
+    left: 140px;
     gap: 50px;
     font-weight: 500;
 }
@@ -55,7 +55,6 @@ body {
     background-color: transparent;
     text-align: center;
     cursor: pointer;
-    display: flex;
     justify-content: center;
     gap: 2px;
 }
@@ -816,9 +815,7 @@ a {
         display: none;
     }
 
-    .add {
-        display: none;
-    }
+   
 
     .login,
     .profile {
@@ -1144,9 +1141,7 @@ font-size: 20px;
         display: none;
     }
 
-    .add {
-        display: none;
-    }
+    
 
     .login,
     .profile {
