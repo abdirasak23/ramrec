@@ -34,7 +34,7 @@ body {
 .heads ul {
   display: flex;
   position: relative;
-  left: 230px;
+  left: 140px;
   gap: 50px;
   font-weight: 500;
   bottom: 10px;
