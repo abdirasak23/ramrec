@@ -24,7 +24,7 @@
 }
 
 .left {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #3CB371 0%, rgb(179, 179, 50) 100%);
     overflow: hidden;
     flex-direction: column;
 }
@@ -92,14 +92,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: red;
+    /* background-color: red; */
     position: relative;
     bottom: 20px;
 }
 
 .logo-section {
     margin-bottom: 2rem;
-    background-color: blue;
+    /* background-color: #3CB371; */
 }
 
 .logo {
@@ -114,6 +114,13 @@
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     animation: pulse 2s infinite;
+    overflow: hidden;
+}
+
+.logo img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 @keyframes pulse {
@@ -128,17 +135,24 @@
     }
 }
 
-.logo::before {
-    content: "⚡";
-    font-size: 2rem;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
-}
+
 
 .brand-name {
     font-size: 1.5rem;
     font-weight: 700;
     color: white;
     margin-bottom: 0.5rem;
+    /* background-color: yellow; */
+    position: relative;
+    width: 200px;
+    left: 150px;
+    height: 30px;
+}
+
+.brand-name img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .hero-title {
@@ -151,6 +165,8 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    position: relative;
+    bottom: 10px;
 }
 
 .hero-subtitle {
@@ -158,6 +174,8 @@
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 2rem;
     line-height: 1.6;
+    position: relative;
+    bottom: 20px;
 }
 
 .features {
@@ -202,7 +220,9 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     padding: 1.5rem;
-    margin-top: 2rem;
+    /* background-color: red; */
+    position: relative;
+    bottom: 50px;
 }
 
 .feedback-title {
@@ -217,6 +237,7 @@
     font-style: italic;
     margin-bottom: 1rem;
     line-height: 1.5;
+    /* background-color: green; */
 }
 
 .user-info {
@@ -284,7 +305,7 @@
 
 
 .logincontainer {
-    background-color: #FFFFF0;
+    /* background-color: #1a1a0c; */
     height: 500px;
     width: 500px;
     position: relative;
@@ -309,7 +330,7 @@
     position: relative;
     top: 10px;
     font-size: 28px;
-    color: blue;
+    color: #3CB371;
 }
 
 .email {
@@ -322,7 +343,7 @@
     border-radius: 10px;
     display: flex;
     overflow: hidden;
-    border: 2px solid rgb(127, 127, 231);
+    border: 2px solid #3CB371;
 }
 
 #email {
@@ -360,7 +381,7 @@
     border-radius: 10px;
     display: flex;
     overflow: hidden;
-    border: 2px solid rgb(127, 127, 231);
+    border: 2px solid #3CB371;
 }
 
 #password {
@@ -397,7 +418,7 @@ button {
     font-size: 18px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(75, 75, 234);
+    background-color: #3CB371;
     color: white;
     cursor: pointer;
 }
@@ -431,7 +452,6 @@ a {
     left: 10px;
     top: 50px;
     display: flex;
-
 }
 
 
@@ -446,11 +466,12 @@ a {
     left: 60px;
     font-size: 18px;
     word-spacing: 5px;
+    
 }
 
 .or a {
     text-decoration: underline;
-    color: blue;
+    color: #3CB371;
 }
 
 .terms {
@@ -466,7 +487,7 @@ a {
 }
 
 .terms a {
-    color: blue;
+    color: #3CB371;
     text-decoration: underline;
 }
 
@@ -515,3 +536,39 @@ a {
     color: white;
 
 }
+
+
+.btn-google svg{
+    position: relative;
+    top: 3px;
+    right: 5px;
+}
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .btn-google {
+            background-color: var(--white);
+            color: var(--text-dark);
+            border: 1px solid #e5e7eb;
+            margin-bottom: 1.5rem;
+            position: relative;
+            top: 160px;
+        }
+        
+        .btn-google:hover {
+            background-color: #a7c7b9a8;
+        }
+        
+        .btn-google img {
+            height: 20px;
+            position: relative;
+            top: 15px;
+        }
+        

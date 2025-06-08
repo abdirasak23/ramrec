@@ -743,3 +743,282 @@ a {
     display: none;
     border: none;
 }
+
+.ad{
+    display: flex;
+}
+
+
+.engagement{
+    height: 50px;
+    width: 260px;
+    position: absolute;
+    /* background-color: grey; */
+    right: -40px;
+    top: 120px;
+    display: flex;
+    gap: 10px;
+}
+
+.rate{
+    width: 90px;
+    height: 40px;
+    background-color: rgba(210, 208, 208, 0.315);
+    position: relative;
+    top: 5px;
+    border-radius: 10px;
+    display: flex;
+}
+
+.rate-icon{
+    height: 30px;
+    width: 30px;
+    background-color: rgba(210, 175, 19, 0.575);
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+
+.rate-icon i{
+    font-size: 20px;
+    position: relative;
+    top:5px ;
+    text-align: center;
+    color: rgb(255, 196, 2);
+}
+
+.rate p{
+    font-size: 18px;
+    position: relative;
+    left: 10px;
+    top: 7px;
+    color: #c4a700;
+}
+
+.engage{
+    height: 40px;
+    width: 40px;
+    background-color: rgba(210, 208, 208, 0.315);
+    position: relative;
+    top: 5px;
+    border-radius: 10px;
+    text-align: center;
+    color: rgba(236, 205, 7, 0.817);
+}
+
+.engage i{
+    font-size: 24px;
+    position: relative;
+    top: 8px;
+}
+
+.engage-container {
+            height: 100vh;
+            width: 100vw;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .rate-container {
+            width: min(500px, 90vw);
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            transform: translateY(-20px);
+            animation: slideUp 0.4s ease-out 0.1s both;
+            text-align: center;
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .rating-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .rating-subtitle {
+            font-size: 16px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        .stars {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 30px;
+        }
+
+        .star {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        .star:hover {
+            transform: scale(1.1);
+            background: rgba(255, 193, 7, 0.1);
+        }
+
+        .star svg {
+            width: 40px;
+            height: 40px;
+            fill: #e0e0e0;
+            transition: all 0.2s ease;
+        }
+
+        .star.active svg {
+            fill: #ffc107;
+            filter: drop-shadow(0 2px 4px rgba(255, 193, 7, 0.3));
+        }
+
+        .star.active {
+            animation: starPop 0.3s ease;
+        }
+
+        @keyframes starPop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .feedback-section {
+            margin-top: 20px;
+        }
+
+        .feedback-input {
+            width: 90%;
+            min-height: 100px;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 16px;
+            font-family: inherit;
+            resize: vertical;
+            transition: border-color 0.2s ease;
+            background: #fafbfc;
+        }
+
+        .feedback-input:focus {
+            outline: none;
+            border-color: #007bff;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+
+        .feedback-input::placeholder {
+            color: #adb5bd;
+        }
+
+        .rating-display {
+            margin: 20px 0;
+            font-size: 18px;
+            font-weight: 500;
+            color: #495057;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .rating-display.show {
+            opacity: 1;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 20px;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .submit-btn.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .submit-btn:hover.active {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #adb5bd;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .close-btn:hover {
+            background: #f8f9fa;
+            color: #6c757d;
+        }
+
+        @media (max-width: 600px) {
+            .rate-container {
+                padding: 30px 20px;
+            }
+            
+            .stars {
+                gap: 4px;
+            }
+            
+            .star {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .star svg {
+                width: 35px;
+                height: 35px;
+            }
+        }
