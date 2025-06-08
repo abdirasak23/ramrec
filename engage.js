@@ -158,7 +158,7 @@
     }
   }
 
-  // 7) Wire up close button and copy button
+ 
   closeBtn.addEventListener('click', closeShareContainer);
   copyBtn.addEventListener('click', copyCurrentLink);
 
