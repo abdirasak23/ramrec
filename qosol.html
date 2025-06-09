@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="/images/icon.png" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Modern Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <title>Recipes</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
         * {
             margin: 0;
             padding: 0;
@@ -12,490 +19,1194 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 2rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            overflow: hidden;
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
+            font-family: 'Inter', sans-serif;
             position: relative;
-            overflow: hidden;
         }
 
-        .hero-section::before {
+        body::before {
             content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 200px;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(120, 219, 226, 0.3) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
         }
 
-        .hero-section::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 150px;
-            height: 150px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-image {
-            width: 120px;
-            height: 120px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            margin: 0 auto 2rem;
+        .heads {
+            height: 90px;
+            width: 100%;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: all 0.3s ease;
         }
 
-        .hero-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            font-weight: 400;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
+        .heads:hover {
             background: rgba(255, 255, 255, 0.15);
-            padding: 1rem 1.5rem;
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
         }
 
-        .contact-item:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-2px);
-        }
-
-        .contact-icon {
-            width: 24px;
-            height: 24px;
-            fill: currentColor;
-        }
-
-        .contact-text {
-            font-weight: 500;
-            font-size: 1rem;
-        }
-
-        .form-section {
-            padding: 4rem 2rem;
-            background: white;
-        }
-
-        .form-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .form-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .form-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 1rem;
-        }
-
-        .form-description {
-            font-size: 1.125rem;
-            color: #6b7280;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .contact-form {
-            display: grid;
-            gap: 2rem;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-label {
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 0.75rem;
-            font-size: 1rem;
-        }
-
-        .form-input {
-            padding: 1.25rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 16px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: #fafafa;
-            font-family: inherit;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: #10b981;
-            background: white;
-            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .checkbox-group {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 0.75rem;
-        }
-
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: #fafafa;
-        }
-
-        .checkbox-item:hover {
-            border-color: #10b981;
-            background: #f0fdf4;
-        }
-
-        .checkbox-item.selected {
-            border-color: #10b981;
-            background: #f0fdf4;
-        }
-
-        .checkbox {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #d1d5db;
-            border-radius: 4px;
+        .logo {
             position: relative;
-            transition: all 0.3s ease;
+            left: 30px;
+            height: 50px;
+            width: 180px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
         }
 
-        .checkbox.checked {
-            background: #10b981;
-            border-color: #10b981;
+        .logo:hover {
+            transform: scale(1.05);
         }
 
-        .checkbox.checked::after {
-            content: '✓';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 12px;
-            font-weight: bold;
+        .logo img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 12px;
         }
 
-        .checkbox-label {
+        .heads ul {
+            display: flex;
+            position: relative;
+            left: 140px;
+            gap: 50px;
             font-weight: 500;
-            color: #374151;
+            list-style: none;
         }
 
-        .message-input {
-            min-height: 140px;
-            resize: vertical;
-            font-family: inherit;
-        }
-
-        .submit-button {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        .heads ul a {
+            text-decoration: none;
+            font-size: 16px;
             color: white;
-            padding: 1.25rem 2.5rem;
-            border: none;
-            border-radius: 16px;
-            font-size: 1.125rem;
             font-weight: 600;
-            cursor: pointer;
+            padding: 12px 20px;
+            border-radius: 25px;
             transition: all 0.3s ease;
-            justify-self: center;
-            min-width: 200px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .submit-button:hover {
+        .heads ul a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .heads ul a:hover::before {
+            left: 100%;
+        }
+
+        .heads ul a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .add {
+            height: 50px;
+            width: 160px;
+            position: relative;
+            left: 300px;
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .add:hover {
+            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.4);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
         }
 
-        .submit-button:active {
+        .add:active {
             transform: translateY(-1px);
         }
 
-        @media (max-width: 768px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-                gap: 1.5rem;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .form-title {
-                font-size: 2rem;
-            }
-
-            .checkbox-group {
-                grid-template-columns: 1fr;
-            }
-
-            body {
-                padding: 1rem;
-            }
+        .add i {
+            font-size: 20px;
         }
 
-        .fade-in {
-            animation: fadeInUp 0.8s ease-out;
+        .login {
+            position: absolute;
+            right: 40px;
+            height: 50px;
+            width: 120px;
+            border-radius: 25px;
+            border: none;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(238, 90, 36, 0.3);
         }
 
-        @keyframes fadeInUp {
+        .login:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(238, 90, 36, 0.4);
+            background: linear-gradient(135deg, #ee5a24, #ff6b6b);
+        }
+
+        .profile {
+            position: absolute;
+            right: 40px;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .profile:hover {
+            transform: scale(1.1);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cats {
+            height: 120px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .cat {
+            height: 80px;
+            width: min(1200px, 90%);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .cat:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .category, .filter {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+        }
+
+        .category i, .filter i {
+            font-size: 24px;
+            color: white;
+            opacity: 0.8;
+        }
+
+        .category select, .filter select {
+            height: 45px;
+            padding: 0 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 150px;
+        }
+
+        .category select:hover, .filter select:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .category select:focus, .filter select:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .search {
+            height: 50px;
+            width: 400px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .search:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .search:focus-within {
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+            transform: scale(1.02);
+        }
+
+        .search i {
+            color: white;
+            opacity: 0.8;
+            font-size: 18px;
+        }
+
+        .line {
+            height: 25px;
+            width: 1px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .search input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .search input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .search input:focus {
+            outline: none;
+        }
+
+        .search #cancel {
+            color: rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            display: none;
+            transition: all 0.3s ease;
+        }
+
+        .search #cancel:hover {
+            color: #ff6b6b;
+            transform: scale(1.2);
+        }
+
+        .cards {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .food-card {
+            height: 220px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            display: flex;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .food-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s;
+            z-index: 1;
+        }
+
+        .food-card:hover::before {
+            left: 100%;
+        }
+
+        .food-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .images {
+            height: 200px;
+            width: 180px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 10px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .food-card:hover .images {
+            transform: scale(1.05);
+        }
+
+        .images img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            filter: brightness(1.1) saturate(1.2);
+            transition: all 0.3s ease;
+        }
+
+        .food-card:hover .images img {
+            filter: brightness(1.2) saturate(1.3);
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+        }
+
+        .head h2 {
+            font-weight: 600;
+            font-size: 14px;
+            color: #10ac84;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .head h2::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, #10ac84, #1dd1a1);
+            border-radius: 2px;
+        }
+
+        .name h2 {
+            font-weight: 700;
+            font-size: 22px;
+            color: #2f3542;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .food-card:hover .name h2 {
+            color: #1e272e;
+        }
+
+        .nuts-time p {
+            color: #747d8c;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nuts-time p::before {
+            content: '⏱️';
+            font-size: 16px;
+        }
+
+        .content button {
+            height: 50px;
+            width: 160px;
+            border: none;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #1dd1a1, #10ac84);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            align-self: flex-start;
+        }
+
+        .content button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .content button:hover::before {
+            left: 100%;
+        }
+
+        .content button:hover {
+            background: linear-gradient(135deg, #10ac84, #1dd1a1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(16, 172, 132, 0.4);
+        }
+
+        .content button:active {
+            transform: translateY(0);
+        }
+
+        /* Mobile Navigation */
+        .menu {
+            display: none;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            color: white;
+            padding: 12px;
+            cursor: pointer;
+        }
+
+        .nav {
+            display: none;
+            position: absolute;
+            top: 90px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .nav.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(-20px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
+        .nav ul {
+            list-style: none;
+            padding: 15px 0;
+        }
+
+        .nav ul a {
+            display: block;
+            padding: 15px 25px;
+            color: #2f3542;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav ul a:hover {
+            background: rgba(29, 209, 161, 0.1);
+            color: #1dd1a1;
+            padding-left: 35px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .cards {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .food-card {
+                height: auto;
+                min-height: 200px;
+            }
+
+            .cat {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .search {
+                width: 100%;
+                order: 3;
+            }
+
+            .category, .filter {
+                flex: 1;
+                min-width: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .heads ul {
+                display: none;
+            }
+
+            .add {
+                display: none;
+            }
+
+            .login {
+                display: none;
+            }
+
+            .menu {
+                display: block;
+                position: absolute;
+                right: 20px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+                padding: 20px 15px;
+            }
+
+            .food-card {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .images {
+                width: 100%;
+                height: 200px;
+                margin: 15px 15px 0 15px;
+            }
+
+            .content {
+                padding: 0 15px 15px 15px;
+            }
+
+            .content button {
+                width: 100%;
+            }
+
+            .cat {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .search {
+                width: 100%;
+            }
+
+            .category, .filter {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Additional animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .food-card:nth-child(odd) {
+            animation: float 6s ease-in-out infinite;
+            animation-delay: 0s;
+        }
+
+        .food-card:nth-child(even) {
+            animation: float 6s ease-in-out infinite;
+            animation-delay: 3s;
+        }
+
+        /* Loading animation for search */
+        .search.loading::after {
+            content: '';
+            position: absolute;
+            right: 20px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Hover effects for better UX */
+        .category select option, .filter select option {
+            background: #2f3542;
+            color: white;
+            padding: 10px;
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 90px;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #1dd1a1, #10ac84);
+            z-index: 101;
+            transition: width 0.1s ease;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Hero Section -->
-        <div class="hero-section">
-            <div class="hero-content">
-                <div class="hero-image">
-                    📞
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+    
+    <div class="heads">
+        <a href="../index.html">
+            <div class="logo">
+                <img src="../images/unto.png" alt="Logo">
+            </div>
+        </a>
+        <ul class="main-nav">
+            <a href="/index.html">
+                <li>HOME</li>
+            </a>
+            <a href="/pages/recipes.html">
+                <li>RECIPE</li>
+            </a>
+            <a href="/pages/about.html">
+                <li>ABOUT</li>
+            </a>
+            <a href="/pages/contact.html">
+                <li>CONTACT</li>
+            </a>
+        </ul>
+        <button class="add">
+            <i class='bx bx-plus'></i>
+            <p>Add Recipe</p>
+        </button>
+        
+        <button class="menu" id="menuBtn">
+            <i class='bx bx-menu'></i>
+        </button>
+
+        <div class="nav" id="mobileNav">
+            <ul>
+                <a href="/index.html">
+                    <li>HOME</li>
+                </a>
+                <a href="/pages/recipes.html">
+                    <li>RECIPE</li>
+                </a>
+                <a href="/pages/about.html">
+                    <li>ABOUT</li>
+                </a>
+                <a href="/pages/contact.html">
+                    <li>CONTACT</li>
+                </a>
+                <a href="/pages/login.html">
+                    <li id="login">Login</li>
+                </a>
+            </ul>
+        </div>
+
+        <button class="login" id="login" onclick="window.location.href = `login.html`">Login</button>
+        <div class="profile" id="profile">
+            <img src="/images/pros.avif" alt="profile">
+        </div>
+    </div>
+    
+    <!-- <div class="cats">
+        <div class="cat">
+            <div class="category">
+                <i class="fa-solid fa-list"></i>
+                <select name="Category" id="categorySelect">
+                    <option value="Category">Categories</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="iftar">Iftar</option>
+                </select>
+            </div>
+
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <div class="line"></div>
+                <input type="text" placeholder="Search delicious recipes..." id="searchInput">
+                <i class="fa-solid fa-circle-xmark" id="cancel"></i>
+            </div>
+
+            <div class="filter">
+                <i class='bx bx-filter-alt'></i>
+                <select name="filter" id="filterSelect">
+                    <option value="Category">Filter</option>
+                    <option value="less-time">Less Time</option>
+                    <option value="more-time">More Time</option>
+                    <option value="easy">Easy</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="difficult">Difficult</option>
+                </select>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="cats">
+        <div class="cat">
+            <div class="category">
+                <i class="fa-solid fa-list"></i>
+                <select name="Category" id="categorySelect">
+                    <option value="Category">Categories</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="iftar">Iftar</option>
+                </select>
+            </div>
+
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <div class="line"></div>
+                <input type="text" placeholder="Search delicious recipes..." id="searchInput">
+                <i class="fa-solid fa-circle-xmark" id="cancel"></i>
+            </div>
+
+            <div class="filter">
+                <i class='bx bx-filter-alt'></i>
+                <select name="filter" id="filterSelect">
+                    <option value="Category">Filter</option>
+                    <option value="less-time">Less Time</option>
+                    <option value="more-time">More Time</option>
+                    <option value="easy">Easy</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="difficult">Difficult</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="cards" id="recipeCards">
+        <div class="food-card">
+            <div class="images">
+                <img src="/images/macr.jpg" alt="Recipe Image">
+            </div>
+            <div class="content">
+                <div class="head">
+                    <h2>Very Easy</h2>
                 </div>
-                <h1 class="hero-title">Contact Us</h1>
-                <p class="hero-subtitle">Get in touch with us today and let us help you with any questions or inquiries you may have.</p>
-                
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <svg class="contact-icon" viewBox="0 0 24 24">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                        <span class="contact-text">hello@squareup.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <svg class="contact-icon" viewBox="0 0 24 24">
-                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                        </svg>
-                        <span class="contact-text">+91 91813 23 2308</span>
-                    </div>
-                    <div class="contact-item">
-                        <svg class="contact-icon" viewBox="0 0 24 24">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                        </svg>
-                        <span class="contact-text">Get Location</span>
-                    </div>
+                <div class="name">
+                    <h2>Fish and Potato Cooked Delight</h2>
                 </div>
+                <div class="nuts-time">
+                    <p>20 min • 189 nutritions</p>
+                </div>
+                <button id="view-btn">View Recipe</button>
             </div>
         </div>
 
-        <!-- Form Section -->
-        <div class="form-section">
-            <div class="form-container fade-in">
-                <div class="form-header">
-                    <h2 class="form-title">Let's Start a Conversation</h2>
-                    <p class="form-description">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+        <!-- Additional sample cards for demonstration -->
+        <div class="food-card">
+            <div class="images">
+                <img src="/images/macr.jpg" alt="Recipe Image">
+            </div>
+            <div class="content">
+                <div class="head">
+                    <h2>Moderate</h2>
                 </div>
+                <div class="name">
+                    <h2>Spicy Chicken Curry</h2>
+                </div>
+                <div class="nuts-time">
+                    <p>45 min • 245 nutritions</p>
+                </div>
+                <button id="view-btn">View Recipe</button>
+            </div>
+        </div>
 
-                <form class="contact-form" id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label" for="fullName">Full Name</label>
-                            <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Enter your full name" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="email">Email Address</label>
-                            <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Why are you contacting us?</label>
-                        <div class="checkbox-group">
-                            <div class="checkbox-item" data-value="web-design">
-                                <div class="checkbox"></div>
-                                <span class="checkbox-label">Web Design</span>
-                            </div>
-                            <div class="checkbox-item" data-value="mobile-app">
-                                <div class="checkbox"></div>
-                                <span class="checkbox-label">Mobile App Design</span>
-                            </div>
-                            <div class="checkbox-item" data-value="collaboration">
-                                <div class="checkbox"></div>
-                                <span class="checkbox-label">Collaboration</span>
-                            </div>
-                            <div class="checkbox-item" data-value="new-suggestion">
-                                <div class="checkbox"></div>
-                                <span class="checkbox-label">New Suggestion</span>
-                            </div>
-                            <div class="checkbox-item" data-value="others">
-                                <div class="checkbox"></div>
-                                <span class="checkbox-label">Others</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="message">Tell us more about your inquiry</label>
-                        <textarea id="message" name="message" class="form-input message-input" placeholder="Please describe your project, question, or how we can help you..." required></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
+        <div class="food-card">
+            <div class="images">
+                <img src="/images/macr.jpg" alt="Recipe Image">
+            </div>
+            <div class="content">
+                <div class="head">
+                    <h2>Easy</h2>
+                </div>
+                <div class="name">
+                    <h2>Fresh Garden Salad</h2>
+                </div>
+                <div class="nuts-time">
+                    <p>10 min • 95 nutritions</p>
+                </div>
+                <button id="view-btn">View Recipe</button>
             </div>
         </div>
     </div>
 
     <script>
-        // Checkbox functionality
-        const checkboxItems = document.querySelectorAll('.checkbox-item');
-        const selectedValues = new Set();
+        // Mobile menu functionality
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+        });
 
-        checkboxItems.forEach(item => {
-            item.addEventListener('click', function() {
-                const checkbox = this.querySelector('.checkbox');
-                const value = this.dataset.value;
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+                mobileNav.classList.remove('active');
+            }
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const cancelBtn = document.getElementById('cancel');
+        const searchContainer = document.querySelector('.search');
+
+        searchInput.addEventListener('input', (e) => {
+            if (e.target.value.length > 0) {
+                cancelBtn.style.display = 'block';
+                searchContainer.classList.add('loading');
                 
-                if (selectedValues.has(value)) {
-                    selectedValues.delete(value);
-                    checkbox.classList.remove('checked');
-                    this.classList.remove('selected');
-                } else {
-                    selectedValues.add(value);
-                    checkbox.classList.add('checked');
-                    this.classList.add('selected');
+                // Simulate search delay
+                setTimeout(() => {
+                    searchContainer.classList.remove('loading');
+                }, 1000);
+            } else {
+                cancelBtn.style.display = 'none';
+                searchContainer.classList.remove('loading');
+            }
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            cancelBtn.style.display = 'none';
+            searchContainer.classList.remove('loading');
+        });
+
+        // Scroll indicator
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.getElementById('scrollIndicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.width = scrolled + '%';
+        });
+
+        // Enhanced card interactions
+        const foodCards = document.querySelectorAll('.food-card');
+        
+        foodCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.zIndex = '10';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.zIndex = '1';
+            });
+        });
+
+        // Filter and category change effects
+        const categorySelect = document.getElementById('categorySelect');
+        const filterSelect = document.getElementById('filterSelect');
+
+        categorySelect.addEventListener('change', (e) => {
+            const cards = document.getElementById('recipeCards');
+            cards.style.opacity = '0.5';
+            
+            setTimeout(() => {
+                cards.style.opacity = '1';
+                // Here you would implement actual filtering logic
+            }, 300);
+        });
+
+        filterSelect.addEventListener('change', (e) => {
+            const cards = document.getElementById('recipeCards');
+            cards.style.opacity = '0.5';
+            
+            setTimeout(() => {
+                cards.style.opacity = '1';
+                // Here you would implement actual filtering logic
+            }, 300);
+        });
+
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add loading states for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                if (!this.classList.contains('loading')) {
+                    this.classList.add('loading');
+                    setTimeout(() => {
+                        this.classList.remove('loading');
+                    }, 2000);
                 }
             });
         });
 
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            if (selectedValues.size === 0) {
-                alert('Please select at least one reason for contacting us.');
-                return;
-            }
-            
-            const formData = new FormData(this);
-            const button = document.querySelector('.submit-button');
-            
-            button.textContent = 'Sending...';
-            button.disabled = true;
-            
-            // Simulate form submission
-            setTimeout(() => {
-                alert('Thank you for your message! We\'ll get back to you within 24 hours.');
-                this.reset();
-                selectedValues.clear();
-                checkboxItems.forEach(item => {
-                    item.classList.remove('selected');
-                    item.querySelector('.checkbox').classList.remove('checked');
-                });
-                button.textContent = 'Send Message';
-                button.disabled = false;
-            }, 2000);
-        });
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-        // Add smooth scrolling and animations
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
+        }, observerOptions);
+
+        // Observe all food cards for scroll animations
+        foodCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(50px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
         });
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
+        // Add ripple effect to buttons
+        function createRipple(event) {
+            const button = event.currentTarget;
+            const circle = document.createElement('span');
+            const diameter = Math.max(button.clientWidth, button.clientHeight);
+            const radius = diameter / 2;
+
+            circle.style.width = circle.style.height = `${diameter}px`;
+            circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+            circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+            circle.classList.add('ripple');
+
+            const ripple = button.getElementsByClassName('ripple')[0];
+            if (ripple) {
+                ripple.remove();
+            }
+
+            button.appendChild(circle);
+        }
+
+        // Add ripple effect CSS
+        const rippleStyle = document.createElement('style');
+        rippleStyle.textContent = `
+            .ripple {
+                position: absolute;
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, 0.6);
+                transform: scale(0);
+                animation: ripple-animation 0.6s linear;
+                pointer-events: none;
+            }
+
+            @keyframes ripple-animation {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+
+            button {
+                position: relative;
+                overflow: hidden;
+            }
+        `;
+        document.head.appendChild(rippleStyle);
+
+        // Apply ripple effect to all buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', createRipple);
         });
 
-        // Add input focus animations
-        const inputs = document.querySelectorAll('.form-input');
-        inputs.forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.style.transform = 'scale(1.02)';
-            });
+        // Add parallax effect to background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('body::before');
+            const speed = scrolled * 0.5;
             
-            input.addEventListener('blur', function() {
-                this.parentElement.style.transform = 'scale(1)';
-            });
+            // Update CSS custom property for parallax effect
+            document.documentElement.style.setProperty('--scroll-offset', `${speed}px`);
+        });
+
+        // Add custom scrollbar styles
+        const scrollbarStyle = document.createElement('style');
+        scrollbarStyle.textContent = `
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: linear-gradient(135deg, #1dd1a1, #10ac84);
+                border-radius: 10px;
+                border: 2px solid transparent;
+                background-clip: content-box;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(135deg, #10ac84, #1dd1a1);
+                background-clip: content-box;
+            }
+        `;
+        document.head.appendChild(scrollbarStyle);
+
+        // Add dynamic theme based on time of day
+        function setDynamicTheme() {
+            const hour = new Date().getHours();
+            const body = document.body;
+            
+            if (hour >= 6 && hour < 12) {
+                // Morning theme
+                body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+            } else if (hour >= 12 && hour < 18) {
+                // Afternoon theme
+                body.style.background = 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)';
+            } else if (hour >= 18 && hour < 22) {
+                // Evening theme
+                body.style.background = 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)';
+            } else {
+                // Night theme
+                body.style.background = 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)';
+            }
+        }
+
+        // Set theme on load
+        setDynamicTheme();
+
+        // Update theme every hour
+        setInterval(setDynamicTheme, 3600000);
+
+        // Add keyboard navigation support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                // Close mobile menu
+                mobileNav.classList.remove('active');
+                // Clear search
+                if (searchInput.value) {
+                    searchInput.value = '';
+                    cancelBtn.style.display = 'none';
+                    searchContainer.classList.remove('loading');
+                }
+            }
+            
+            if (e.key === 'Enter' && e.target === searchInput) {
+                // Trigger search
+                searchContainer.classList.add('loading');
+                setTimeout(() => {
+                    searchContainer.classList.remove('loading');
+                }, 1000);
+            }
+        });
+
+        // Add touch gesture support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                // Swipe left - could be used for navigation
+                console.log('Swipe left detected');
+            }
+            if (touchEndX > touchStartX + 50) {
+                // Swipe right - could be used for navigation
+                console.log('Swipe right detected');
+            }
+        }
+
+        // Add performance optimization
+        let ticking = false;
+
+        function updateScrollIndicator() {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.getElementById('scrollIndicator').style.width = scrolled + '%';
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollIndicator);
+                ticking = true;
+            }
+        });
+
+        // Add loading animation for the entire page
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
         });
     </script>
 </body>

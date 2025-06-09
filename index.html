@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-
     <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
     <link rel="shortcut icon" href="favicon/favicon.ico" />
@@ -15,8 +14,17 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Unto - Somali food Recipes Platform",
+          "url": "https://www.unto.dhiibso.tech/",
+          "logo": "https://www.dhiibso.tech/assets/images/mylogo.png"
+        }
+        </script>
 
-    <title>Cunto Wadaag</title>
+    <title>Unto - Somali food Recipes Platform</title>
 </head>
 
 <body>
@@ -29,7 +37,7 @@
     <div class="heads">
         <a href="index.html">
             <div class="logo">
-                <img src="images/cunto2.png" alt="">
+                <img src="images/unto.png" alt="">
             </div>
         </a>
         <ul class="main-nav">
@@ -102,7 +110,7 @@
             <p class="hero-subtitle">
                 Turn humble ingredients into unforgettable flavors.
             </p>
-            <a href="#recipes" class="cta-button">
+            <a href="/pages/recipes.html" class="cta-button">
                 <span>Start Cooking</span>
                 <svg class="cta-icon" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd"
@@ -113,9 +121,9 @@
         </div>
 
         <div class="hero-images">
-            <div class="hero-image">🍳</div>
-            <div class="hero-image">🥘</div>
-            <div class="hero-image">🍰</div>
+            <div class="hero-image"><img src="images/pan.png" alt=""></div>
+            <div class="hero-image"><img src="images/chicken.png" alt=""></div>
+            <div class="hero-image"><img src="images/cake.png" alt=""></div>
         </div>
     </div>
 
@@ -163,7 +171,7 @@
                 <h2>Become the chef of your own kitchen! Follow our easy, step-by-step recipes with precise
                     measurements. Cook delicious meals effortlessly and with confidence.</h2>
             </div>
-            <button class="learn_more">Learn more</button>
+            <button onclick="location.href='about.html'" class="learn_more">Learn more</button>
         </div>
         <div class="right">
             <img src="images/swaped.jpg" alt="">
@@ -198,10 +206,10 @@
         <div class="foot">
             <div class="loga">
                 <a href="index.html">
-                    <div class="logo">
-                        <h1>RAM<span>REC</span></h1>
-                    </div>
-                </a>
+            <div class="logo">
+                <img src="images/unto.png" alt="">
+            </div>
+        </a>
             </div>
             <div class="desc">
                 <h2>Recipes Made Simple, Flavors Made Special!</h2>
@@ -241,6 +249,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="app.js"></script>
+
 </body>
 
 </html>

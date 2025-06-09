@@ -5,13 +5,30 @@ body {
     background-color: #FFFFF0;
     margin: 0px;
     padding: 0px;
-    font-family: 'Rubik';
+    font-family: 'Roboto', sans-serif;
     overflow: hidden;
 }
 
 * {
     margin: 0px;
     padding: 0px;
+}
+
+.logo {
+    position: relative;
+    left: 30px;
+    top: 20px;
+    /* background-color: green; */
+    height: 40px;
+    width: 120px;
+    overflow: hidden;
+
+}
+
+.logo img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .login {
@@ -86,7 +103,7 @@ body {
 }
 
 .about {
-    background: linear-gradient(to right, #270082, #6d1a8b);
+    background: linear-gradient(135deg, #3CB371 0%, rgb(179, 179, 50) 100%);
     position: absolute;
     height: 200px;
     width: 100%;
