@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Define the text for each tab.
     const tabText = {
-        "Mission": "At RamRec, our mission is to simplify cooking by providing accessible and reliable recipe data. We empower individuals—especially young home cooks—to effortlessly recreate restaurant-quality dishes in their own kitchens, transforming everyday meals into gourmet experiences.",
-        "Vision": "At RamRec, our vision is to empower both ourselves and others to continuously enhance our cooking skills. We aim to cultivate a supportive community where every recipe is a step towards greater culinary mastery, encouraging creativity, confidence, and a shared passion for the art of cooking.",
-        "Our Value": "At RamRec, we are committed to quality foods—curating only the finest recipes that bring exceptional taste and nutritional value to your table. Our dedication to culinary excellence has not only enriched the cooking experiences of our community but has also established RamRec as a premium platform with an estimated market value of 1 billion USD."
+        "Mission": "At CuntoWadaag , our mission is to simplify cooking by providing accessible and reliable recipe data. We empower individuals—especially young home cooks—to effortlessly recreate restaurant-quality dishes in their own kitchens, transforming everyday meals into gourmet experiences.",
+        "Vision": "At CuntoWadaag , our vision is to empower both ourselves and others to continuously enhance our cooking skills. We aim to cultivate a supportive community where every recipe is a step towards greater culinary mastery, encouraging creativity, confidence, and a shared passion for the art of cooking.",
+        "Our Value": "At CuntoWadaag , we are committed to quality foods—curating only the finest recipes that bring exceptional taste and nutritional value to your table. Our dedication to culinary excellence has not only enriched the cooking experiences of our community but has also established CuntoWadaag  as a premium platform with an estimated market value of 1 billion USD."
     };
 
 
