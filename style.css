@@ -889,11 +889,11 @@ a {
     }
 
 
-    .start{
+    /* .start{
         width: 350px;
         position: relative;
         left: 10px;
-    }
+    } */
 
     .categories{
         /* background-color: grey; */
@@ -1098,16 +1098,23 @@ font-size: 20px;
 }
 
 
+.start{
+    width: 240px !important;
+    position: relative;
+    left: 10px;
+}
 
+.hero-content{
+    background-color: black;
+    height: 60px;
+    position: relative;
+    bottom: 80px;
+    left: -50px;
+}
 
-
-
-
-
-
-
-
-
+.hero-content .hero-title{
+    font-size: 20px;
+}
 
 }
 
