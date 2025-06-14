@@ -502,7 +502,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       viewButton.addEventListener('click', (event) => {
         event.stopPropagation();
         sessionStorage.setItem('selectedFood', JSON.stringify(recipe));
-        window.location.href = `../food_page.html?id=${recipe.id}&table=${recipe.table}`;
+        // window.location.href = `../Food?name=${recipe.food_name}&id=${recipe.id}&table=${recipe.table}`;
+        window.location.href = `../Food/?${recipe.food_name}&id=${recipe.id}&table=${recipe.table}`;
       });
 
       cardsContainer.appendChild(card);

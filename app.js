@@ -43,43 +43,54 @@ async function loadRecipes(category = 'all types') {
     const cat = category.trim().toLowerCase();
 
     if (cat === 'all types') {
-      // Fetch from all three tables concurrently.
-      const [dinnerResult, sahurResult, iftarResult] = await Promise.all([
+      // Fetch from all tables concurrently
+      const [breakfastResult, launchResult, dinnerResult, cookiesResult] = await Promise.all([
         supabaseClient.from('breakfast').select('*').limit(8),
         supabaseClient.from('launch').select('*'),
-        supabaseClient.from('dinner').select('*')
+        supabaseClient.from('dinner').select('*'),
+        supabaseClient.from('cookies').select('*')
       ]);
 
+      // Error handling for all requests
+      if (breakfastResult.error) throw breakfastResult.error;
+      if (launchResult.error) throw launchResult.error;
       if (dinnerResult.error) throw dinnerResult.error;
-      if (sahurResult.error) throw sahurResult.error;
-      if (iftarResult.error) throw iftarResult.error;
+      if (cookiesResult.error) throw cookiesResult.error;
 
       // Attach table information to each item
-      const dinnerData = dinnerResult.data.map(item => ({ ...item, table: 'breakfast' }));
-      const sahurData = sahurResult.data.map(item => ({ ...item, table: 'launch' }));
-      const iftarData = iftarResult.data.map(item => ({ ...item, table: 'dinner' }));
+      const breakfastData = breakfastResult.data.map(item => ({ ...item, table: 'breakfast' }));
+      const launchData = launchResult.data.map(item => ({ ...item, table: 'launch' }));
+      const dinnerData = dinnerResult.data.map(item => ({ ...item, table: 'dinner' }));
+      const cookiesData = cookiesResult.data.map(item => ({ ...item, table: 'cookies' }));
 
-      data = [...dinnerData, ...sahurData, ...iftarData];
-    } else if (cat === 'breakfast') {
-      const { data: sahurData, error } = await supabaseClient.from('breakfast').select('*');
+      data = [...breakfastData, ...launchData, ...dinnerData, ...cookiesData];
+    } 
+    else {
+      // Handle individual categories
+      let tableName;
+      switch(cat) {
+        case 'breakfast': tableName = 'breakfast'; break;
+        case 'launch': tableName = 'launch'; break;
+        case 'dinner': tableName = 'dinner'; break;
+        case 'cookies': tableName = 'cookies'; break;
+        default: return;  // Invalid category
+      }
+
+      const { data: tableData, error } = await supabaseClient
+        .from(tableName)
+        .select('*')
+        .limit(tableName === 'dinner' || tableName === 'cookies' ? 8 : undefined);
+
       if (error) throw error;
-      data = sahurData.map(item => ({ ...item, table: 'breakfast' }));
-    } else if (cat === 'launch') {
-      const { data: iftarData, error } = await supabaseClient.from('launch').select('*');
-      if (error) throw error;
-      data = iftarData.map(item => ({ ...item, table: 'launch' }));
-    } else if (cat === 'dinner') {
-      const { data: dinnerData, error } = await supabaseClient.from('dinner').select('*').limit(8);
-      if (error) throw error;
-      data = dinnerData.map(item => ({ ...item, table: 'dinner' }));
+      data = tableData.map(item => ({ ...item, table: tableName }));
     }
 
-    // Get the container where the recipe cards will be appended
+    // Render results
     const cardsContainer = document.querySelector('.cards');
     cardsContainer.innerHTML = '';
 
     if (!data || data.length === 0) {
-      cardsContainer.innerHTML = '<p>No data is in there</p>';
+      cardsContainer.innerHTML = '<p>No recipes found</p>';
       return;
     }
 
@@ -89,10 +100,10 @@ async function loadRecipes(category = 'all types') {
       card.className = 'card recipe_cards';
       card.innerHTML = `
         <div class="head">
-          <h2>${item.food_name || 'No Name'}</h2>
+          <h2>${item.food_name || 'Unnamed Recipe'}</h2>
         </div>
         <div class="image">
-          <img src="${item.food_image_url || 'placeholder.jpg'}" alt="${item.food_name || 'No Name'}">
+          <img src="${item.food_image_url || 'placeholder.jpg'}" alt="${item.food_name || 'Recipe image'}">
         </div>
         <div class="see">
           <h2>See complete recipe</h2>
@@ -100,16 +111,22 @@ async function loadRecipes(category = 'all types') {
         </div>
       `;
 
-      // Save the selected food data in sessionStorage then redirect
+      // Add click handler with proper URL encoding
       card.addEventListener('click', () => {
         sessionStorage.setItem('selectedFood', JSON.stringify(item));
-        window.location.href = `food_page.html?id=${item.id}&table=${item.table}`;
+        const params = new URLSearchParams({
+          name: item.food_name || '',
+          id: item.id,
+          table: item.table
+        });
+        window.location.href = `Food/?${params.toString()}`;
       });
 
       cardsContainer.appendChild(card);
     });
   } catch (err) {
     console.error('Error fetching recipes:', err);
+    // Consider adding user-friendly error display here
   }
 }
 
@@ -128,7 +145,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   } else {
     loginButton.style.display = 'block';
     profileContainer.style.display = 'none';
-    loginButton.addEventListener('click', () => window.location.href = 'login.html');
+    loginButton.addEventListener('click', () => window.location.href = 'Login/');
   }
   
 
@@ -184,10 +201,10 @@ addButton.addEventListener('click', async () => {
 
     if (session) {
         // User is logged in, redirect to admin page
-        window.location.href = 'admin.html';
+        window.location.href = 'Admin/';
     } else {
         // User is not logged in, redirect to login page
-        window.location.href = 'login.html';
+        window.location.href = 'Login/';
     }
 });
 
