@@ -501,3 +501,157 @@ const videoCredit = document.getElementById('videoCreditInput')?.value.trim();
   };
 
 });
+
+
+
+// Recipe Steps Management
+class RecipeStepsManager {
+    constructor() {
+        this.stepsContainer = document.querySelector('.steps');
+        this.addButton = document.querySelector('.add-new');
+        this.stepCounter = 3; // Start from 4 since we have 3 initial steps
+        
+        this.init();
+    }
+    
+    init() {
+        // Add event listener for the "Add Step" button
+        this.addButton.addEventListener('click', () => this.addNewStep());
+        
+        // Add event listeners for existing delete buttons
+        this.attachDeleteListeners();
+    }
+    
+    addNewStep() {
+        this.stepCounter++;
+        
+        // Create new step HTML
+        const newStepHTML = `
+            <div class="nutri" id="steps">
+                <h3>Step ${this.stepCounter}</h3>
+                <div class="info-step">
+                    <div class="nutritions_details" id="step-input">
+                        <input type="text" placeholder="eg. Add Another Step">
+                    </div>
+                    <div class="cancel">
+                        <i class="fa-solid fa-trash"></i>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Insert the new step before the "Add Step" button
+        this.addButton.insertAdjacentHTML('beforebegin', newStepHTML);
+        
+        // Attach delete listener to the new step
+        this.attachDeleteListeners();
+    }
+    
+    attachDeleteListeners() {
+        // Remove existing listeners to avoid duplicates
+        const deleteButtons = document.querySelectorAll('.cancel');
+        
+        deleteButtons.forEach(button => {
+            // Remove existing event listeners by cloning the element
+            const newButton = button.cloneNode(true);
+            button.parentNode.replaceChild(newButton, button);
+            
+            // Add new event listener
+            newButton.addEventListener('click', (e) => this.deleteStep(e));
+        });
+    }
+    
+    deleteStep(event) {
+        const stepElement = event.target.closest('.nutri');
+        
+        // Don't allow deletion if only one step remains
+        const allSteps = document.querySelectorAll('.nutri[id="steps"]');
+        if (allSteps.length <= 1) {
+            alert('At least one step is required!');
+            return;
+        }
+        
+        // Remove the step
+        stepElement.remove();
+        
+        // Renumber all remaining steps
+        this.renumberSteps();
+    }
+    
+    renumberSteps() {
+        const allSteps = document.querySelectorAll('.nutri[id="steps"]');
+        
+        allSteps.forEach((step, index) => {
+            const stepTitle = step.querySelector('h3');
+            stepTitle.textContent = `Step ${index + 1}`;
+        });
+        
+        // Update counter to reflect current number of steps
+        this.stepCounter = allSteps.length;
+    }
+}
+
+// Initialize the steps manager when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new RecipeStepsManager();
+});
+
+// Alternative simpler approach (if you prefer functional style)
+/*
+document.addEventListener('DOMContentLoaded', function() {
+    const stepsContainer = document.querySelector('.steps');
+    const addButton = document.querySelector('.add-new');
+    let stepCounter = 3;
+    
+    // Add new step
+    addButton.addEventListener('click', function() {
+        stepCounter++;
+        
+        const newStep = document.createElement('div');
+        newStep.className = 'nutri';
+        newStep.id = 'steps';
+        newStep.innerHTML = `
+            <h3>Step ${stepCounter}</h3>
+            <div class="info-step">
+                <div class="nutritions_details" id="step-input">
+                    <input type="text" placeholder="eg. Add Another Step">
+                </div>
+                <div class="cancel">
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+            </div>
+        `;
+        
+        stepsContainer.insertBefore(newStep, addButton);
+        attachDeleteListener(newStep.querySelector('.cancel'));
+    });
+    
+    // Attach delete listeners to existing steps
+    document.querySelectorAll('.cancel').forEach(button => {
+        attachDeleteListener(button);
+    });
+    
+    function attachDeleteListener(button) {
+        button.addEventListener('click', function() {
+            const allSteps = document.querySelectorAll('.nutri[id="steps"]');
+            
+            if (allSteps.length <= 1) {
+                alert('At least one step is required!');
+                return;
+            }
+            
+            this.closest('.nutri').remove();
+            renumberSteps();
+        });
+    }
+    
+    function renumberSteps() {
+        const allSteps = document.querySelectorAll('.nutri[id="steps"]');
+        stepCounter = allSteps.length;
+        
+        allSteps.forEach((step, index) => {
+            step.querySelector('h3').textContent = `Step ${index + 1}`;
+        });
+    }
+});
+*/

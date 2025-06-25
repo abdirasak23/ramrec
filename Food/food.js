@@ -196,9 +196,9 @@ function updateVideoData(food) {
   const videoDuration = document.querySelector('.video-duration');
   if (videoDuration) {
     if (food.video_credit) {
-      videoDuration.textContent = `Credit: Video by: ${food.video_credit}`;
+      videoDuration.textContent = `Credit: ${food.video_credit}`;
     } else {
-      videoDuration.textContent = 'Credit: Video by: Cunto kariso'; // Default fallback
+      videoDuration.textContent = 'Credit: Cunto kariso'; // Default fallback
     }
   }
 
@@ -1564,3 +1564,133 @@ CREATE POLICY "Users can insert their own favourites" ON favourites FOR INSERT W
 CREATE POLICY "Users can delete their own favourites" ON favourites FOR DELETE USING (auth.uid() = user_id);
 
 */
+
+
+
+async function loadDirections() {
+    if (!foodId) {
+        console.error('Food ID not found in URL parameters');
+        return;
+    }
+
+    try {
+        const { data, error } = await supabaseClient
+            .from(table)
+            .select('directions')
+            .eq('id', foodId)
+            .single();
+
+        if (error) {
+            throw new Error(`Supabase error: ${error.message}`);
+        }
+
+        if (!data || !data.directions) {
+            throw new Error('No directions found for this recipe');
+        }
+
+        displayDirections(data.directions);
+    } catch (error) {
+        console.error('Error loading directions:', error);
+        displayError(error.message);
+    }
+}
+
+// Function to display directions in the steps section
+function displayDirections(directions) {
+    const stepsContainer = document.querySelector('.steps .step');
+    if (!stepsContainer) {
+        console.error('Steps container not found');
+        return;
+    }
+
+    // Clear existing content
+    stepsContainer.innerHTML = '';
+
+    // Process directions (array or string)
+    let stepsArray = [];
+    if (Array.isArray(directions)) {
+        stepsArray = directions;
+    } else if (typeof directions === 'string') {
+        // Split by newlines or numbers
+        stepsArray = directions.split(/\n|\d+\.\s*/).filter(step => step.trim());
+    }
+
+    // Display each step
+    stepsArray.forEach((step, index) => {
+        if (!step.trim()) return;
+
+        const stepCount = document.createElement('p');
+        stepCount.className = 'step-count';
+        stepCount.textContent = `Step ${index + 1}`;
+
+        const stepInfo = document.createElement('p');
+        stepInfo.className = 'step-info';
+        stepInfo.textContent = step.trim();
+
+        stepsContainer.appendChild(stepCount);
+        stepsContainer.appendChild(stepInfo);
+    });
+
+    // Add animation effect
+    animateSteps();
+}
+
+// Function to add animation to steps
+function animateSteps() {
+    const steps = document.querySelectorAll('.step-count, .step-info');
+    steps.forEach((step, index) => {
+        step.style.opacity = '0';
+        step.style.transform = 'translateY(20px)';
+        step.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+        
+        setTimeout(() => {
+            step.style.opacity = '1';
+            step.style.transform = 'translateY(0)';
+        }, 100);
+    });
+}
+
+// Function to display errors
+function displayError(message) {
+    const stepsContainer = document.querySelector('.steps');
+    if (!stepsContainer) return;
+    
+    stepsContainer.innerHTML = `
+        <div class="step-error">
+            <i class='bx bx-error-circle'></i>
+            <p>${message}</p>
+            <button onclick="location.reload()">Try Again</button>
+        </div>
+    `;
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    // Add CSS for animations
+    const style = document.createElement('style');
+    style.textContent = `
+        .step-error {
+            text-align: center;
+            padding: 20px;
+            color: #e74c3c;
+        }
+        .step-error i {
+            font-size: 48px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .step-error button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Load directions
+    loadDirections();
+});

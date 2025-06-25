@@ -161,6 +161,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ---------- Recipe Steps Collection Function ----------
+  /**
+   * Collects all recipe steps from the form and returns them as an array
+   * @returns {Array} Array of step descriptions
+   */
+  function collectRecipeSteps() {
+    const stepInputs = document.querySelectorAll('#steps input[type="text"]');
+    const steps = [];
+    
+    stepInputs.forEach((input, index) => {
+      const stepValue = input.value.trim();
+      if (stepValue) {
+        steps.push(stepValue);
+      }
+    });
+    
+    return steps;
+  }
+
+  /**
+   * Validates that at least one step is provided
+   * @returns {boolean} True if steps are valid, false otherwise
+   */
+  function validateSteps() {
+    const steps = collectRecipeSteps();
+    return steps.length > 0;
+  }
+
   // ---------- Handle Form Submission ----------
   document.querySelector('button').addEventListener('click', async (e) => {
     e.preventDefault();
@@ -200,6 +228,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
+      // Validate recipe steps
+      if (!validateSteps()) {
+        showAlert('Please add at least one recipe step with description', 'error');
+        submitButton.textContent = originalButtonText;
+        submitButton.disabled = false;
+        return;
+      }
+
       // Retrieve the selected category (its value corresponds to the table name).
       const categorySelect = document.querySelector('#categories select');
       if (!categorySelect || !categorySelect.value) {
@@ -213,6 +249,9 @@ document.addEventListener('DOMContentLoaded', () => {
       // Get YouTube video fields
       const videoIdInput = document.getElementById('videoIdInput');
       const videoCreditInput = document.getElementById('videoCreditInput');
+
+      // Collect recipe steps
+      const recipeSteps = collectRecipeSteps();
 
       // Prepare the form data from your inputs.
       const formData = {
@@ -228,13 +267,18 @@ document.addEventListener('DOMContentLoaded', () => {
         carbohydrates: parseInt(document.querySelector('.nutritions .nutri:nth-child(4) input').value) || 0,
         // Add YouTube video fields
         video_id: videoIdInput ? videoIdInput.value.trim() : '',
-        video_credit: videoCreditInput ? videoCreditInput.value.trim() : ''
+        video_credit: videoCreditInput ? videoCreditInput.value.trim() : '',
+        // Add recipe steps as an array - this will be saved in the 'directions' column
+        directions: recipeSteps
       };
 
       // Extract ingredients from the tags container as an array.
       const ingredients = Array.from(tagsContainer.querySelectorAll('.coma'))
         .map(tag => tag.dataset.value);
       formData.ingredients = ingredients;
+
+      console.log('Form data prepared:', formData);
+      console.log('Recipe steps collected:', recipeSteps);
 
       // Function to convert a data URL to a Blob.
       function dataURLtoBlob(dataUrl) {
@@ -304,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Food image URL:', foodImageUrl);
       console.log('Ad image URL:', adImageUrl);
 
-      // Insert data (including the ingredients array and video fields) into the table corresponding to the selected category.
+      // Insert data (including the ingredients array, recipe steps array, and video fields) into the table corresponding to the selected category.
       console.log(`Inserting data into ${category} table...`);
       const { data: insertData, error: insertError } = await supabase
         .from(category)
@@ -324,16 +368,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
       console.log('Data inserted successfully:', insertData);
 
-      // Reset the form, clear localStorage and the tags container.
+      // Reset the form, clear localStorage, tags container, and steps
       document.querySelectorAll('input').forEach(input => input.value = '');
       imageContainers.forEach(container => {
         container.innerHTML = '<i class="bx bx-plus"></i>';
       });
       tagsContainer.innerHTML = '';
+      
+      // Reset steps to initial state (keep only first step)
+      const stepsContainer = document.querySelector('.steps');
+      const allSteps = stepsContainer.querySelectorAll('.nutri[id="steps"]');
+      // Remove all steps except the first one
+      for (let i = 1; i < allSteps.length; i++) {
+        allSteps[i].remove();
+      }
+      // Clear the first step's input
+      const firstStepInput = stepsContainer.querySelector('#steps input[type="text"]');
+      if (firstStepInput) {
+        firstStepInput.value = '';
+      }
+      
       localStorage.removeItem('foodImage');
       localStorage.removeItem('adImage');
 
-      showAlert('Recipe submitted successfully!', 'success');
+      showAlert('Recipe with directions submitted successfully!', 'success');
     } catch (error) {
       console.error('Submission error:', error);
       showAlert(`Error submitting recipe: ${error.message}`, 'error');
